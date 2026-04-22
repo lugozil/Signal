@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIGNAL · by Signs and Media — Amplificamos la señal de tu marca</title>
+  <meta name="description" content="Agencia de marketing y tecnología: gestión de redes sociales, Meta & Google Ads, CRM + automatizaciones y desarrollo web." />
+
+  <!-- ===== Tailwind CSS (CDN) ===== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            signal: {
+              orange: '#FF5A00',
+              orangeDark: '#CC4700',
+              dark: '#0E0E10',
+              graphite: '#1A1A1A',
+              steel: '#2A2A2D',
+              mist: '#A0A0A6',
+              ink: '#111114',
+              paper: '#F4F4F6',
+              white: '#F5F5F7'
+            }
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 40px rgba(255,90,0,0.35)',
+            card: '0 10px 40px rgba(0,0,0,0.35)',
+            cardLight: '0 8px 30px rgba(17,17,20,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== Three.js ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    html, body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em; }
+
+    /* ========= Grid técnico (pattern) ========= */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    :root:not(.dark) .grid-bg {
+      background-image:
+        linear-gradient(rgba(17,17,20,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,20,0.08) 1px, transparent 1px);
+    }
+
+    /* ========= Text gradient naranja ========= */
+    .text-gradient {
+      background: linear-gradient(90deg, #FF5A00 0%, #FF8A3D 60%, #FFFFFF 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    :root:not(.dark) .text-gradient {
+      background: linear-gradient(90deg, #FF5A00 0%, #E64A00 60%, #1A1A1A 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* ========= Bento Cards ========= */
+    .bento-card {
+      position: relative; overflow: hidden; border-radius: 1.25rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease, background .4s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,90,0,0.6);
+      box-shadow: 0 20px 60px rgba(255,90,0,0.15);
+    }
+
+    /* ---- Light mode: cards visibles con contraste real ---- */
+    :root:not(.dark) body { background: #FAFAFB; color: #111114; }
+    :root:not(.dark) .bento-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(17,17,20,0.08);
+      box-shadow: 0 8px 24px rgba(17,17,20,0.06);
+      color: #111114;
+    }
+    :root:not(.dark) .bento-card:hover {
+      border-color: #FF5A00;
+      box-shadow: 0 18px 50px rgba(255,90,0,0.18);
+    }
+    :root:not(.dark) .bento-card h3,
+    :root:not(.dark) .bento-card h4 { color: #111114; }
+    :root:not(.dark) .bento-card p,
+    :root:not(.dark) .bento-card span,
+    :root:not(.dark) .bento-card li { color: #3a3a42; }
+    :root:not(.dark) .bento-card .chip {
+      border-color: rgba(17,17,20,0.15); color: #111114; background: #fff;
+    }
+
+    /* Header light */
+    :root:not(.dark) header {
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(17,17,20,0.08);
+    }
+    :root:not(.dark) header a.nav-link { color: #3a3a42; }
+    :root:not(.dark) header a.nav-link:hover { color: #111114; }
+    :root:not(.dark) header .brand-sub { color: #6b6b73; }
+
+    /* Hero light legibility */
+    :root:not(.dark) .hero-overlay { background: linear-gradient(to bottom, rgba(250,250,251,0), rgba(250,250,251,0.5), #FAFAFB); }
+    :root:not(.dark) .muted { color: #4a4a52; }
+    :root:not(.dark) .soft   { color: #6b6b73; }
+    :root:not(.dark) .divider { border-color: rgba(17,17,20,0.1) !important; }
+
+    /* Footer light */
+    :root:not(.dark) footer { background: #FFFFFF; color: #111114; border-top: 1px solid rgba(17,17,20,0.08); }
+    :root:not(.dark) footer a { color: #3a3a42; }
+    :root:not(.dark) footer a:hover { color: #111114; }
+
+    /* ========= CTA pulse ========= */
+    .cta-pulse { position: relative; }
+    .cta-pulse::after {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      box-shadow: 0 0 0 0 rgba(255,90,0,0.6);
+      animation: pulse 2.4s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(255,90,0,0.55); }
+      70%  { box-shadow: 0 0 0 22px rgba(255,90,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,90,0,0); }
+    }
+
+    /* ========= Reveal on scroll ========= */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ========= Hero canvas ========= */
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    /* ========= WhatsApp Floating Button ========= */
+    .wa-fab {
+      position: fixed; right: 22px; bottom: 22px; z-index: 60;
+      width: 60px; height: 60px; border-radius: 999px;
+      background: #25D366; color: white;
+      display: grid; place-items: center;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.45);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .wa-fab:hover { transform: scale(1.08); box-shadow: 0 14px 40px rgba(37,211,102,0.55); }
+    .wa-fab::before {
+      content: ''; position: absolute; inset: 0; border-radius: 999px;
+      box-shadow: 0 0 0 0 rgba(37,211,102,0.55);
+      animation: waPulse 2s ease-out infinite;
+    }
+    @keyframes waPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
+      70%  { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .wa-fab .wa-label {
+      position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+      white-space: nowrap; font-size: 13px; font-weight: 600;
+      background: #111114; color: #fff; padding: 8px 12px; border-radius: 10px;
+      opacity: 0; pointer-events: none; transition: opacity .3s ease;
+    }
+    :root:not(.dark) .wa-fab .wa-label { background: #111114; color: #fff; }
+    .wa-fab:hover .wa-label { opacity: 1; }
+
+    /* ========= Social Feed Mockup (card redes sociales) ========= */
+    .sm-mockup {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+    }
+    .sm-tile {
+      position: relative; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    :root:not(.dark) .sm-tile { border-color: rgba(17,17,20,0.1); }
+    .sm-tile::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(255,90,0,0.7), rgba(255,90,0,0) 60%);
+    }
+    .sm-tile.t1 { background: linear-gradient(135deg,#FF5A00,#2A2A2D); }
+    .sm-tile.t2 { background: linear-gradient(135deg,#111114,#FF5A00 120%); }
+    .sm-tile.t3 { background: repeating-linear-gradient(45deg,#FF5A00 0 8px,#1A1A1A 8px 16px); }
+    .sm-tile.t4 { background: radial-gradient(circle at 30% 30%, #FF8A3D, #1A1A1A 70%); }
+    .sm-tile.t5 { background: linear-gradient(180deg,#2A2A2D,#FF5A00); }
+    .sm-tile.t6 { background: linear-gradient(90deg,#FF5A00,#FFFFFF22); }
+    .sm-tile .lbl {
+      position: absolute; left: 8px; bottom: 8px; z-index: 2;
+      font-size: 10px; font-weight: 700; color: #fff;
+      padding: 2px 6px; border-radius: 4px;
+      background: rgba(0,0,0,0.45); backdrop-filter: blur(4px);
+    }
+    .sm-tile .heart {
+      position: absolute; right: 8px; top: 8px; z-index: 2;
+      color: #fff; opacity: .9;
+    }
+    @keyframes tileFloat {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-3px); }
+    }
+    .sm-tile.t2 { animation: tileFloat 3.6s ease-in-out infinite; }
+    .sm-tile.t4 { animation: tileFloat 4.2s ease-in-out infinite; animation-delay: .6s; }
+    .sm-tile.t6 { animation: tileFloat 3.2s ease-in-out infinite; animation-delay: 1s; }
+
+    /* ========= Language switch ========= */
+    .lang-switch {
+      display: inline-flex; align-items: center; gap: 2px;
+      padding: 3px; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+    }
+    :root:not(.dark) .lang-switch { border-color: rgba(17,17,20,0.12); background: #fff; }
+    .lang-switch button {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 5px 10px; border-radius: 999px; color: #A0A0A6; transition: all .25s ease;
+    }
+    :root:not(.dark) .lang-switch button { color: #6b6b73; }
+    .lang-switch button.active {
+      background: #FF5A00; color: #fff;
+    }
+  </style>
+</head>
+
+<body class="bg-signal-dark text-signal-white transition-colors duration-500">
+
+<!-- ==================== HEADER ==================== -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-signal-dark/70 border-b border-white/5">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 group">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:scale-110">
+        <circle cx="6" cy="26" r="3" fill="#FF5A00"/>
+        <path d="M6 18 a10 10 0 0 1 10 10" stroke="#FF5A00" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M6 10 a18 18 0 0 1 18 18" stroke="#FF5A00" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="font-display text-xl font-bold tracking-tight">SIGNAL</span>
+      <span class="hidden sm:inline text-xs brand-sub text-signal-mist ml-1">by Signs &amp; Media</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm text-signal-mist">
+      <li><a href="#servicios" class="nav-link hover:text-signal-white transition" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="#nosotros"  class="nav-link hover:text-signal-white transition" data-i18n="nav.about">Nosotros</a></li>
+      <li><a href="#casos"     class="nav-link hover:text-signal-white transition" data-i18n="nav.cases">Casos de Éxito</a></li>
+      <li><a href="#contacto"  class="nav-link hover:text-signal-white transition" data-i18n="nav.contact">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <!-- Language switch -->
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+
+      <!-- Theme toggle -->
+      <button id="theme-toggle" aria-label="Toggle theme"
+        class="w-10 h-10 grid place-items-center rounded-full border border-white/10 hover:border-signal-orange transition">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <a href="#contacto"
+         class="hidden sm:inline-flex items-center gap-2 bg-signal-orange hover:bg-signal-orangeDark text-white font-semibold text-sm px-4 py-2 rounded-full transition"
+         data-i18n="nav.cta">
+        Agenda una Auditoría
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="relative overflow-hidden min-h-screen flex items-center grid-bg pt-24">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-signal-dark/10 via-signal-dark/60 to-signal-dark pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 reveal">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-signal-orange/40 text-signal-orange text-xs font-semibold uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-signal-orange animate-pulse"></span>
+        <span data-i18n="hero.badge">Marketing + Tecnología</span>
+      </span>
+
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] mt-6">
+        <span data-i18n="hero.title1">Amplificamos la</span>
+        <span class="text-gradient" data-i18n="hero.title2">señal</span>
+        <span data-i18n="hero.title3">de tu marca.</span>
+      </h1>
+
+      <p class="mt-6 text-lg lg:text-xl text-signal-mist muted max-w-xl" data-i18n="hero.subtitle">
+        Integramos estrategia de marketing, publicidad de alto rendimiento y automatización con IA para que tu mensaje llegue más lejos — con precisión quirúrgica.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a href="#contacto"
+           class="cta-pulse inline-flex items-center justify-center gap-2 bg-signal-orange hover:bg-signal-orangeDark text-white font-semibold px-7 py-4 rounded-full transition shadow-glow"
+           data-i18n="hero.cta1">
+          Agenda una Auditoría Gratis
+        </a>
+        <a href="#servicios"
+           class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/60 text-signal-white font-semibold px-7 py-4 rounded-full transition divider"
+           data-i18n="hero.cta2">
+          Ver servicios
+        </a>
+      </div>
+
+      <div class="mt-14 grid grid-cols-3 gap-6 max-w-lg">
+        <div><div class="font-display text-3xl text-signal-orange">+120</div><div class="text-xs text-signal-mist soft mt-1" data-i18n="hero.kpi1">Campañas Activas</div></div>
+        <div><div class="font-display text-3xl text-signal-orange">4.8x</div><div class="text-xs text-signal-mist soft mt-1" data-i18n="hero.kpi2">ROAS Promedio</div></div>
+        <div><div class="font-display text-3xl text-signal-orange">24/7</div><div class="text-xs text-signal-mist soft mt-1" data-i18n="hero.kpi3">Automatización</div></div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 reveal hidden lg:block">
+      <div class="bento-card p-6 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-xs uppercase tracking-widest text-signal-mist soft" data-i18n="hero.live">Signal · Live</span>
+          <span class="flex items-center gap-2 text-xs text-signal-orange">
+            <span class="w-2 h-2 rounded-full bg-signal-orange animate-ping"></span> <span data-i18n="hero.broadcast">transmitiendo</span>
+          </span>
+        </div>
+        <div class="flex items-end gap-1 h-36">
+          <div class="flex-1 bg-signal-orange/80 rounded-sm" style="height:30%"></div>
+          <div class="flex-1 bg-signal-orange/60 rounded-sm" style="height:55%"></div>
+          <div class="flex-1 bg-signal-orange/90 rounded-sm" style="height:72%"></div>
+          <div class="flex-1 bg-signal-orange/50 rounded-sm" style="height:40%"></div>
+          <div class="flex-1 bg-signal-orange     rounded-sm" style="height:95%"></div>
+          <div class="flex-1 bg-signal-orange/70 rounded-sm" style="height:65%"></div>
+          <div class="flex-1 bg-signal-orange/40 rounded-sm" style="height:38%"></div>
+          <div class="flex-1 bg-signal-orange/90 rounded-sm" style="height:80%"></div>
+          <div class="flex-1 bg-signal-orange/60 rounded-sm" style="height:48%"></div>
+          <div class="flex-1 bg-signal-orange/80 rounded-sm" style="height:70%"></div>
+          <div class="flex-1 bg-signal-orange/50 rounded-sm" style="height:35%"></div>
+          <div class="flex-1 bg-signal-orange     rounded-sm" style="height:90%"></div>
+        </div>
+        <div class="mt-5 grid grid-cols-2 gap-4 text-xs">
+          <div class="p-3 rounded-lg border border-white/10 divider">
+            <div class="text-signal-mist soft" data-i18n="hero.reach">Reach semanal</div>
+            <div class="font-display text-lg">1.2M</div>
+          </div>
+          <div class="p-3 rounded-lg border border-white/10 divider">
+            <div class="text-signal-mist soft" data-i18n="hero.leads">Leads calificados</div>
+            <div class="font-display text-lg">+348</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-signal-mist soft animate-bounce text-xs">↓ scroll</div>
+</section>
+
+<!-- ==================== SERVICIOS (BENTO) ==================== -->
+<section id="servicios" class="relative py-28 px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-16 reveal">
+      <p class="text-signal-orange font-semibold uppercase tracking-widest text-sm" data-i18n="serv.kicker">Servicios</p>
+      <h2 class="font-display text-4xl lg:text-6xl font-bold mt-3 leading-tight">
+        <span data-i18n="serv.title1">Una sola frecuencia.</span> <br/>
+        <span class="text-gradient" data-i18n="serv.title2">Cinco amplificadores.</span>
+      </h2>
+      <p class="mt-5 text-signal-mist muted text-lg" data-i18n="serv.subtitle">
+        Un ecosistema integrado de marketing y tecnología, diseñado para transmitir tu mensaje y convertirlo en resultados medibles.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-5 auto-rows-[220px]">
+
+      <!-- 1. Redes Sociales -->
+      <article class="bento-card reveal md:col-span-6 lg:col-span-7 lg:row-span-2 p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 grid place-items-center rounded-xl bg-signal-orange/15 text-signal-orange">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h10M7 16h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold" data-i18n="card.sm.title">Gestión de Redes Sociales</h3>
+          </div>
+          <p class="text-signal-mist muted max-w-lg" data-i18n="card.sm.desc">Estrategia de contenido, producción creativa, copywriting y community management en Instagram, TikTok, LinkedIn y más.</p>
+        </div>
+
+        <!-- Mockup dinámico de feed social (llena el espacio vacío) -->
+        <div class="sm-mockup mt-6">
+          <div class="sm-tile t1">
+            <span class="lbl">Reel · 12K</span>
+            <svg class="heart w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z"/></svg>
+          </div>
+          <div class="sm-tile t2">
+            <span class="lbl">Post · 4.8K</span>
+          </div>
+          <div class="sm-tile t3">
+            <span class="lbl">Story · 9K</span>
+          </div>
+          <div class="sm-tile t4">
+            <span class="lbl">TikTok · 88K</span>
+            <svg class="heart w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z"/></svg>
+          </div>
+          <div class="sm-tile t5">
+            <span class="lbl">Carrusel</span>
+          </div>
+          <div class="sm-tile t6">
+            <span class="lbl">Ad · ROAS 5.2</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 mt-6">
+          <div class="flex -space-x-2">
+            <div class="w-9 h-9 rounded-full bg-signal-orange/90 grid place-items-center text-xs font-bold text-white">IG</div>
+            <div class="w-9 h-9 rounded-full bg-signal-orange/70 grid place-items-center text-xs font-bold text-white">TT</div>
+            <div class="w-9 h-9 rounded-full bg-signal-orange/50 grid place-items-center text-xs font-bold text-white">IN</div>
+            <div class="w-9 h-9 rounded-full bg-signal-orange/30 grid place-items-center text-xs font-bold text-white">FB</div>
+          </div>
+          <span class="text-xs text-signal-mist soft" data-i18n="card.sm.chan">+4 canales gestionados</span>
+        </div>
+      </article>
+
+      <!-- 2. Ads -->
+      <article class="bento-card reveal md:col-span-3 lg:col-span-5 p-7 flex flex-col justify-between">
+        <div>
+          <div class="w-11 h-11 grid place-items-center rounded-xl bg-signal-orange/15 text-signal-orange mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 4 4 5-5"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold" data-i18n="card.ads.title">Publicidad de Alto Rendimiento</h3>
+          <p class="text-signal-mist muted mt-2 text-sm" data-i18n="card.ads.desc">Meta Ads · Google Ads · YouTube Ads. Campañas optimizadas con data y creatividad para maximizar ROAS.</p>
+        </div>
+        <div class="mt-4 flex gap-2 text-xs">
+          <span class="chip px-2 py-1 rounded-full border border-white/10">Meta</span>
+          <span class="chip px-2 py-1 rounded-full border border-white/10">Google</span>
+          <span class="chip px-2 py-1 rounded-full border border-white/10">TikTok</span>
+        </div>
+      </article>
+
+      <!-- 3. CRM -->
+      <article class="bento-card reveal md:col-span-3 lg:col-span-5 p-7 flex flex-col justify-between">
+        <div>
+          <div class="w-11 h-11 grid place-items-center rounded-xl bg-signal-orange/15 text-signal-orange mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold" data-i18n="card.crm.title">CRM &amp; Automatizaciones</h3>
+          <p class="text-signal-mist muted mt-2 text-sm" data-i18n="card.crm.desc">Implementación de CRM con agentes IA, flujos en HubSpot / Kommo / N8N y gestión inteligente de leads.</p>
+        </div>
+        <div class="mt-4 text-xs text-signal-mist soft" data-i18n="card.crm.tags">Integraciones WhatsApp · Email · Voz IA</div>
+      </article>
+
+      <!-- 4. Web (ahora col-span 7) -->
+      <article class="bento-card reveal md:col-span-6 lg:col-span-7 p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 grid place-items-center rounded-xl bg-signal-orange/15 text-signal-orange">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3M16 9l3 3-3 3M14 5l-4 14"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold" data-i18n="card.web.title">Construcción &amp; Desarrollo Web</h3>
+          </div>
+          <p class="text-signal-mist muted text-sm" data-i18n="card.web.desc">Sitios corporativos, landing pages de conversión, e-commerce y dashboards personalizados. Stack moderno: Next.js, Tailwind, Supabase.</p>
+        </div>
+        <div class="mt-5 flex items-center gap-4 text-xs text-signal-mist soft">
+          <span data-i18n="card.web.f1">⚡ Core Web Vitals AAA</span><span>·</span>
+          <span data-i18n="card.web.f2">SEO técnico</span><span>·</span>
+          <span data-i18n="card.web.f3">Tracking GA4 + GTM</span>
+        </div>
+      </article>
+
+      <!-- 5. ⭐ NUEVA: Soporte & Personalización (llena esquina inferior derecha) -->
+      <article class="bento-card reveal md:col-span-6 lg:col-span-5 p-7 flex flex-col justify-between">
+        <div>
+          <div class="w-11 h-11 grid place-items-center rounded-xl bg-signal-orange/15 text-signal-orange mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317a1 1 0 011.35 0l.707.708a1 1 0 001.414 0l.707-.708a1 1 0 011.414 1.414l-.707.708a1 1 0 000 1.414l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 00-1.414 0l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 000-1.414L9.618 5.73a1 1 0 01.707-1.414zM12 13a3 3 0 11-6 0 3 3 0 016 0zM8 19l-2 3M16 19l2 3"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold" data-i18n="card.sup.title">Soporte &amp; Personalización</h3>
+          <p class="text-signal-mist muted mt-2 text-sm" data-i18n="card.sup.desc">Acompañamiento técnico continuo, customización de plataformas y optimización permanente de tu stack digital según crece tu marca.</p>
+        </div>
+        <div class="mt-4 flex gap-2 text-xs flex-wrap">
+          <span class="chip px-2 py-1 rounded-full border border-white/10" data-i18n="card.sup.t1">Soporte 24/7</span>
+          <span class="chip px-2 py-1 rounded-full border border-white/10" data-i18n="card.sup.t2">Integraciones a medida</span>
+          <span class="chip px-2 py-1 rounded-full border border-white/10" data-i18n="card.sup.t3">Optimización continua</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== POR QUÉ ELEGIRNOS ==================== -->
+<section id="nosotros" class="relative py-28 px-6 lg:px-10 border-t border-white/5 divider">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5 reveal">
+      <p class="text-signal-orange font-semibold uppercase tracking-widest text-sm" data-i18n="why.kicker">Por qué SIGNAL</p>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold mt-3 leading-tight">
+        <span data-i18n="why.t1">Precisión técnica.</span><br/>
+        <span data-i18n="why.t2">Alcance real.</span><br/>
+        <span class="text-gradient" data-i18n="why.t3">Solidez de señal.</span>
+      </h2>
+      <p class="mt-5 text-signal-mist muted text-lg" data-i18n="why.desc">
+        No vendemos "arte". Vendemos sistemas que convierten. Cada pieza creativa y cada campaña se diseña bajo una misma lógica de ingeniería: medible, escalable y reproducible.
+      </p>
+      <a href="#contacto" class="mt-8 inline-flex items-center gap-2 text-signal-orange hover:text-signal-orangeDark font-semibold" data-i18n="why.link">
+        Conversemos sobre tu marca →
+      </a>
+    </div>
+
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5 reveal">
+      <div class="bento-card p-6">
+        <div class="text-signal-orange font-display text-4xl">01</div>
+        <h4 class="font-display font-bold text-lg mt-3" data-i18n="why.f1.t">Precisión de Grid</h4>
+        <p class="text-signal-mist muted text-sm mt-2" data-i18n="why.f1.d">Auditorías técnicas, benchmarking y arquitectura de campaña pensadas como un sistema, no como piezas sueltas.</p>
+      </div>
+      <div class="bento-card p-6">
+        <div class="text-signal-orange font-display text-4xl">02</div>
+        <h4 class="font-display font-bold text-lg mt-3" data-i18n="why.f2.t">Alcance Amplificado</h4>
+        <p class="text-signal-mist muted text-sm mt-2" data-i18n="why.f2.d">Estrategias multicanal con foco en ROAS. Conectamos awareness, performance y nurturing en una misma cadena.</p>
+      </div>
+      <div class="bento-card p-6">
+        <div class="text-signal-orange font-display text-4xl">03</div>
+        <h4 class="font-display font-bold text-lg mt-3" data-i18n="why.f3.t">Solidez Operacional</h4>
+        <p class="text-signal-mist muted text-sm mt-2" data-i18n="why.f3.d">CRM, automatizaciones y reportes en vivo. Tu operación comercial vive en un panel claro, no en un Excel perdido.</p>
+      </div>
+      <div class="bento-card p-6">
+        <div class="text-signal-orange font-display text-4xl">04</div>
+        <h4 class="font-display font-bold text-lg mt-3" data-i18n="why.f4.t">Innovación Tecnológica</h4>
+        <p class="text-signal-mist muted text-sm mt-2" data-i18n="why.f4.d">Agentes IA, voice bots y analítica predictiva integradas a tu funnel — no como moda, sino como ventaja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CASOS DE ÉXITO ==================== -->
+<section id="casos" class="py-28 px-6 lg:px-10 border-t border-white/5 divider">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-end justify-between mb-10 reveal">
+      <div>
+        <p class="text-signal-orange font-semibold uppercase tracking-widest text-sm" data-i18n="cases.kicker">Casos de Éxito</p>
+        <h2 class="font-display text-4xl lg:text-5xl font-bold mt-3" data-i18n="cases.title">Marcas que amplificamos.</h2>
+      </div>
+      <a href="#" class="hidden sm:inline text-sm text-signal-mist soft hover:text-signal-white" data-i18n="cases.all">Ver todos →</a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+
+      <!-- Case 1: Signs and Media -->
+      <a href="#" class="bento-card p-6 flex flex-col justify-between min-h-[260px]">
+        <!-- Logo SVG inspirado en Signs and Media -->
+        <div class="h-20 grid place-items-center mb-2">
+          <svg viewBox="0 0 300 60" class="w-full max-w-[220px]" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="44" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="38" fill="#2E7DBF" letter-spacing="1">SIGNS</text>
+            <polygon points="24,10 36,10 30,22" fill="#E23A2F"/>
+            <text x="140" y="44" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="#2E7DBF">AND</text>
+            <text x="188" y="44" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="38" fill="#E23A2F" letter-spacing="1">MEDIA</text>
+            <text x="286" y="18" font-family="Inter, sans-serif" font-size="8" fill="#E23A2F">™</text>
+          </svg>
+        </div>
+        <span class="text-xs uppercase tracking-widest text-signal-mist soft" data-i18n="case1.kicker">Marketing integral · Branding</span>
+        <div>
+          <h3 class="font-display text-2xl font-bold mt-4" data-i18n="case1.title">+312% en ventas online</h3>
+          <p class="text-signal-mist muted text-sm mt-2" data-i18n="case1.desc">Rebranding completo y reestructura de funnels de conversión.</p>
+        </div>
+      </a>
+
+      <!-- Case 2: Hacienda El Lago -->
+      <a href="#" class="bento-card p-6 flex flex-col justify-between min-h-[260px]">
+        <div class="h-20 grid place-items-center mb-2">
+          <svg viewBox="0 0 280 90" class="w-full max-w-[220px]" xmlns="http://www.w3.org/2000/svg">
+            <text x="140" y="30" text-anchor="middle" font-family="Space Grotesk, serif" font-weight="700" font-size="26" fill="#1E5F8F" letter-spacing="4">HACIENDA</text>
+            <text x="92"  y="72" font-family="'Brush Script MT', cursive" font-style="italic" font-size="28" fill="#1E5F8F">el</text>
+            <text x="128" y="78" font-family="'Brush Script MT', cursive" font-style="italic" font-size="48" fill="#1BA39C">Lago</text>
+          </svg>
+        </div>
+        <span class="text-xs uppercase tracking-widest text-signal-mist soft" data-i18n="case2.kicker">Hospitalidad · CRM + Ads</span>
+        <div>
+          <h3 class="font-display text-2xl font-bold mt-4" data-i18n="case2.title">Reservas 24/7 automatizadas</h3>
+          <p class="text-signal-mist muted text-sm mt-2" data-i18n="case2.desc">Flujo WhatsApp + IA para captación y calificación de huéspedes.</p>
+        </div>
+      </a>
+
+      <!-- Case 3: Lumotica Innovations -->
+      <a href="#" class="bento-card p-6 flex flex-col justify-between min-h-[260px]">
+        <div class="h-20 grid place-items-center mb-2 rounded-lg" style="background:#111114">
+          <svg viewBox="0 0 300 70" class="w-full max-w-[220px]" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="30" font-family="Space Grotesk, sans-serif" font-weight="300" font-size="22" fill="#FFFFFF" letter-spacing="6">LUMOTICA</text>
+            <text x="10" y="54" font-family="Space Grotesk, sans-serif" font-weight="300" font-size="16" fill="#FFFFFF" letter-spacing="8">INNOVATIONS</text>
+            <!-- Casa isométrica con circuito -->
+            <g stroke="#9BD3E6" stroke-width="1.2" fill="none" transform="translate(220,12)">
+              <path d="M0 30 L20 20 L40 30 L40 50 L20 60 L0 50 Z"/>
+              <path d="M20 20 L20 40 L0 50 M20 40 L40 50"/>
+              <circle cx="45" cy="25" r="1.8" fill="#9BD3E6"/>
+              <circle cx="55" cy="35" r="1.8" fill="#9BD3E6"/>
+              <circle cx="50" cy="50" r="1.8" fill="#9BD3E6"/>
+              <path d="M40 30 L45 25 M40 40 L55 35 M40 50 L50 50"/>
+            </g>
+          </svg>
+        </div>
+        <span class="text-xs uppercase tracking-widest text-signal-mist soft" data-i18n="case3.kicker">Domótica · Web + Leads</span>
+        <div>
+          <h3 class="font-display text-2xl font-bold mt-4" data-i18n="case3.title">CAC -47%</h3>
+          <p class="text-signal-mist muted text-sm mt-2" data-i18n="case3.desc">Funnel de búsqueda Google Ads + landing optimizada para domótica residencial.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA FINAL ==================== -->
+<section id="contacto" class="relative py-28 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto text-center reveal">
+    <h2 class="font-display text-4xl lg:text-6xl font-bold leading-tight">
+      <span data-i18n="cta.t1">¿Listo para amplificar tu</span> <span class="text-gradient" data-i18n="cta.t2">señal</span><span data-i18n="cta.t3">?</span>
+    </h2>
+    <p class="mt-5 text-signal-mist muted text-lg max-w-2xl mx-auto" data-i18n="cta.desc">
+      Agenda una auditoría gratuita de 30 minutos. Revisamos tu marca, tus canales y salimos con un plan de acción claro.
+    </p>
+    <a href="https://api.whatsapp.com/send/?phone=17877178770&text=Hola+SeenMedia%2C+me+interesa+conocer+m%C3%A1s+sobre+sus+servicios&type=phone_number&app_absent=0"
+       target="_blank" rel="noopener"
+       class="cta-pulse mt-10 inline-flex items-center gap-2 bg-signal-orange hover:bg-signal-orangeDark text-white font-semibold px-8 py-4 rounded-full transition shadow-glow"
+       data-i18n="cta.btn">
+      Agenda una Auditoría
+    </a>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="border-t border-white/5 divider py-14 px-6 lg:px-10 text-sm">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6" cy="26" r="3" fill="#FF5A00"/>
+          <path d="M6 18 a10 10 0 0 1 10 10" stroke="#FF5A00" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M6 10 a18 18 0 0 1 18 18" stroke="#FF5A00" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="font-display font-bold text-lg">SIGNAL</span>
+      </div>
+      <p class="mt-3 text-signal-mist soft max-w-xs" data-i18n="footer.tag">Agencia integral de Marketing + Tecnología. Amplificamos la señal de marcas ambiciosas.</p>
+    </div>
+    <div>
+      <h5 class="font-display font-bold mb-3" data-i18n="footer.company">Compañía</h5>
+      <ul class="space-y-2 text-signal-mist">
+        <li><a href="#servicios" class="hover:text-signal-white" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#nosotros"  class="hover:text-signal-white" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="#casos"     class="hover:text-signal-white" data-i18n="nav.cases">Casos de Éxito</a></li>
+        <li><a href="#"          class="hover:text-signal-white">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-display font-bold mb-3" data-i18n="footer.contact">Contacto</h5>
+      <ul class="space-y-2 text-signal-mist">
+        <li>hola@signalmedia.co</li>
+        <li>+1 787 717 8770</li>
+        <li class="flex gap-3 mt-3">
+          <a href="#" class="w-9 h-9 grid place-items-center rounded-full border border-white/10 hover:border-signal-orange hover:text-signal-orange">IG</a>
+          <a href="#" class="w-9 h-9 grid place-items-center rounded-full border border-white/10 hover:border-signal-orange hover:text-signal-orange">IN</a>
+          <a href="#" class="w-9 h-9 grid place-items-center rounded-full border border-white/10 hover:border-signal-orange hover:text-signal-orange">TT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 divider flex flex-col sm:flex-row justify-between items-center gap-3 text-signal-mist soft">
+    <span>© <span id="year"></span> SIGNAL by Signs &amp; Media. <span data-i18n="footer.rights">Todos los derechos reservados.</span></span>
+    <div class="flex gap-5">
+      <a href="#" class="hover:text-signal-white" data-i18n="footer.privacy">Privacidad</a>
+      <a href="#" class="hover:text-signal-white" data-i18n="footer.terms">Términos</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
+<a class="wa-fab"
+   href="https://api.whatsapp.com/send/?phone=17877178770&text=Hola+SeenMedia%2C+me+interesa+conocer+m%C3%A1s+sobre+sus+servicios&type=phone_number&app_absent=0"
+   target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="currentColor">
+    <path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.19-.56.06-.26-.13-1.1-.41-2.09-1.29-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.44l-.5-.01c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.82 2.78 4.41 3.89.62.27 1.1.43 1.47.55.62.2 1.18.17 1.62.1.49-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3zM16 4C9.37 4 4 9.37 4 16c0 2.18.58 4.32 1.68 6.19L4 28l6-1.57A12 12 0 0016 28c6.63 0 12-5.37 12-12S22.63 4 16 4zm0 21.83c-1.98 0-3.92-.53-5.62-1.54l-.4-.24-3.56.93.95-3.47-.26-.4A9.82 9.82 0 016.17 16 9.84 9.84 0 0116 6.17 9.84 9.84 0 0125.83 16 9.84 9.84 0 0116 25.83z"/>
+  </svg>
+  <span class="wa-label" data-i18n="wa.label">Escríbenos por WhatsApp</span>
+</a>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  /* ============ 1. THEME TOGGLE ============ */
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('theme-toggle');
+  const iconSun  = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+
+  const savedTheme = localStorage.getItem('signal-theme');
+  if (savedTheme === 'light') root.classList.remove('dark');
+
+  function syncIcons(){
+    const dark = root.classList.contains('dark');
+    iconSun.classList.toggle('hidden', !dark);
+    iconMoon.classList.toggle('hidden', dark);
+  }
+  syncIcons();
+
+  themeBtn.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('signal-theme', root.classList.contains('dark') ? 'dark' : 'light');
+    syncIcons();
+  });
+
+  /* ============ 2. I18N (ES/EN) ============ */
+  const I18N = {
+    es: {
+      'nav.services': 'Servicios', 'nav.about': 'Nosotros', 'nav.cases': 'Casos de Éxito',
+      'nav.contact': 'Contacto', 'nav.cta': 'Agenda una Auditoría',
+      'hero.badge': 'Marketing + Tecnología',
+      'hero.title1': 'Amplificamos la', 'hero.title2': 'señal', 'hero.title3': 'de tu marca.',
+      'hero.subtitle': 'Integramos estrategia de marketing, publicidad de alto rendimiento y automatización con IA para que tu mensaje llegue más lejos — con precisión quirúrgica.',
+      'hero.cta1': 'Agenda una Auditoría Gratis', 'hero.cta2': 'Ver servicios',
+      'hero.kpi1': 'Campañas Activas', 'hero.kpi2': 'ROAS Promedio', 'hero.kpi3': 'Automatización',
+      'hero.live': 'Signal · En Vivo', 'hero.broadcast': 'transmitiendo',
+      'hero.reach': 'Reach semanal', 'hero.leads': 'Leads calificados',
+      'serv.kicker': 'Servicios',
+      'serv.title1': 'Una sola frecuencia.', 'serv.title2': 'Cinco amplificadores.',
+      'serv.subtitle': 'Un ecosistema integrado de marketing y tecnología, diseñado para transmitir tu mensaje y convertirlo en resultados medibles.',
+      'card.sm.title': 'Gestión de Redes Sociales',
+      'card.sm.desc': 'Estrategia de contenido, producción creativa, copywriting y community management en Instagram, TikTok, LinkedIn y más.',
+      'card.sm.chan': '+4 canales gestionados',
+      'card.ads.title': 'Publicidad de Alto Rendimiento',
+      'card.ads.desc': 'Meta Ads · Google Ads · YouTube Ads. Campañas optimizadas con data y creatividad para maximizar ROAS.',
+      'card.crm.title': 'CRM & Automatizaciones',
+      'card.crm.desc': 'Implementación de CRM con agentes IA, flujos en HubSpot / Kommo / N8N y gestión inteligente de leads.',
+      'card.crm.tags': 'Integraciones WhatsApp · Email · Voz IA',
+      'card.web.title': 'Construcción & Desarrollo Web',
+      'card.web.desc': 'Sitios corporativos, landing pages de conversión, e-commerce y dashboards personalizados. Stack moderno: Next.js, Tailwind, Supabase.',
+      'card.web.f1': '⚡ Core Web Vitals AAA', 'card.web.f2': 'SEO técnico', 'card.web.f3': 'Tracking GA4 + GTM',
+      'card.sup.title': 'Soporte & Personalización',
+      'card.sup.desc': 'Acompañamiento técnico continuo, customización de plataformas y optimización permanente de tu stack digital según crece tu marca.',
+      'card.sup.t1': 'Soporte 24/7', 'card.sup.t2': 'Integraciones a medida', 'card.sup.t3': 'Optimización continua',
+      'why.kicker': 'Por qué SIGNAL',
+      'why.t1': 'Precisión técnica.', 'why.t2': 'Alcance real.', 'why.t3': 'Solidez de señal.',
+      'why.desc': 'No vendemos "arte". Vendemos sistemas que convierten. Cada pieza creativa y cada campaña se diseña bajo una misma lógica de ingeniería: medible, escalable y reproducible.',
+      'why.link': 'Conversemos sobre tu marca →',
+      'why.f1.t': 'Precisión de Grid', 'why.f1.d': 'Auditorías técnicas, benchmarking y arquitectura de campaña pensadas como un sistema, no como piezas sueltas.',
+      'why.f2.t': 'Alcance Amplificado', 'why.f2.d': 'Estrategias multicanal con foco en ROAS. Conectamos awareness, performance y nurturing en una misma cadena.',
+      'why.f3.t': 'Solidez Operacional', 'why.f3.d': 'CRM, automatizaciones y reportes en vivo. Tu operación comercial vive en un panel claro, no en un Excel perdido.',
+      'why.f4.t': 'Innovación Tecnológica', 'why.f4.d': 'Agentes IA, voice bots y analítica predictiva integradas a tu funnel — no como moda, sino como ventaja.',
+      'cases.kicker': 'Casos de Éxito', 'cases.title': 'Marcas que amplificamos.', 'cases.all': 'Ver todos →',
+      'case1.kicker': 'Marketing integral · Branding', 'case1.title': '+312% en ventas online',
+      'case1.desc': 'Rebranding completo y reestructura de funnels de conversión.',
+      'case2.kicker': 'Hospitalidad · CRM + Ads', 'case2.title': 'Reservas 24/7 automatizadas',
+      'case2.desc': 'Flujo WhatsApp + IA para captación y calificación de huéspedes.',
+      'case3.kicker': 'Domótica · Web + Leads', 'case3.title': 'CAC -47%',
+      'case3.desc': 'Funnel de búsqueda Google Ads + landing optimizada para domótica residencial.',
+      'cta.t1': '¿Listo para amplificar tu', 'cta.t2': 'señal', 'cta.t3': '?',
+      'cta.desc': 'Agenda una auditoría gratuita de 30 minutos. Revisamos tu marca, tus canales y salimos con un plan de acción claro.',
+      'cta.btn': 'Agenda una Auditoría',
+      'footer.tag': 'Agencia integral de Marketing + Tecnología. Amplificamos la señal de marcas ambiciosas.',
+      'footer.company': 'Compañía', 'footer.contact': 'Contacto', 'footer.rights': 'Todos los derechos reservados.',
+      'footer.privacy': 'Privacidad', 'footer.terms': 'Términos',
+      'wa.label': 'Escríbenos por WhatsApp'
+    },
+    en: {
+      'nav.services': 'Services', 'nav.about': 'About', 'nav.cases': 'Case Studies',
+      'nav.contact': 'Contact', 'nav.cta': 'Book an Audit',
+      'hero.badge': 'Marketing + Technology',
+      'hero.title1': 'We amplify your', 'hero.title2': 'signal', 'hero.title3': "to the market.",
+      'hero.subtitle': 'We integrate marketing strategy, high-performance advertising, and AI automation so your message reaches further — with surgical precision.',
+      'hero.cta1': 'Book a Free Audit', 'hero.cta2': 'Explore Services',
+      'hero.kpi1': 'Active Campaigns', 'hero.kpi2': 'Average ROAS', 'hero.kpi3': 'Automation',
+      'hero.live': 'Signal · Live', 'hero.broadcast': 'broadcasting',
+      'hero.reach': 'Weekly reach', 'hero.leads': 'Qualified leads',
+      'serv.kicker': 'Services',
+      'serv.title1': 'One single frequency.', 'serv.title2': 'Five amplifiers.',
+      'serv.subtitle': 'An integrated marketing + tech ecosystem, built to broadcast your message and turn it into measurable results.',
+      'card.sm.title': 'Social Media Management',
+      'card.sm.desc': 'Content strategy, creative production, copywriting and community management on Instagram, TikTok, LinkedIn and more.',
+      'card.sm.chan': '+4 channels managed',
+      'card.ads.title': 'High-Performance Advertising',
+      'card.ads.desc': 'Meta Ads · Google Ads · YouTube Ads. Data-driven, creative campaigns engineered to maximize ROAS.',
+      'card.crm.title': 'CRM & Automations',
+      'card.crm.desc': 'CRM setup with AI agents, workflows in HubSpot / Kommo / N8N and smart lead management.',
+      'card.crm.tags': 'WhatsApp · Email · AI Voice integrations',
+      'card.web.title': 'Web Design & Development',
+      'card.web.desc': 'Corporate sites, conversion landing pages, e-commerce and custom dashboards. Modern stack: Next.js, Tailwind, Supabase.',
+      'card.web.f1': '⚡ AAA Core Web Vitals', 'card.web.f2': 'Technical SEO', 'card.web.f3': 'GA4 + GTM tracking',
+      'card.sup.title': 'Support & Customization',
+      'card.sup.desc': 'Ongoing technical support, platform customization and continuous optimization of your digital stack as your brand grows.',
+      'card.sup.t1': '24/7 Support', 'card.sup.t2': 'Custom integrations', 'card.sup.t3': 'Continuous optimization',
+      'why.kicker': 'Why SIGNAL',
+      'why.t1': 'Technical precision.', 'why.t2': 'Real reach.', 'why.t3': 'Signal-strong.',
+      'why.desc': "We don't sell 'art'. We sell systems that convert. Every creative piece and every campaign follows the same engineering logic: measurable, scalable, reproducible.",
+      'why.link': "Let's talk about your brand →",
+      'why.f1.t': 'Grid Precision', 'why.f1.d': 'Technical audits, benchmarking and campaign architecture designed as a system — not loose pieces.',
+      'why.f2.t': 'Amplified Reach', 'why.f2.d': 'Multichannel strategies focused on ROAS. We connect awareness, performance and nurturing in one chain.',
+      'why.f3.t': 'Operational Solidity', 'why.f3.d': 'CRM, automations and live reports. Your sales ops lives in a clear dashboard — not a forgotten Excel.',
+      'why.f4.t': 'Tech Innovation', 'why.f4.d': 'AI agents, voice bots and predictive analytics plugged into your funnel — as advantage, not hype.',
+      'cases.kicker': 'Case Studies', 'cases.title': 'Brands we amplified.', 'cases.all': 'See all →',
+      'case1.kicker': 'Integrated marketing · Branding', 'case1.title': '+312% in online sales',
+      'case1.desc': 'Full rebrand and restructure of conversion funnels.',
+      'case2.kicker': 'Hospitality · CRM + Ads', 'case2.title': '24/7 automated bookings',
+      'case2.desc': 'WhatsApp + AI flow to capture and qualify guests around the clock.',
+      'case3.kicker': 'Home Automation · Web + Leads', 'case3.title': 'CAC -47%',
+      'case3.desc': 'Google Ads search funnel + optimized landing for residential home automation.',
+      'cta.t1': 'Ready to amplify your', 'cta.t2': 'signal', 'cta.t3': '?',
+      'cta.desc': 'Book a free 30-minute audit. We review your brand, your channels and walk out with a clear action plan.',
+      'cta.btn': 'Book an Audit',
+      'footer.tag': 'End-to-end Marketing + Tech agency. We amplify the signal of ambitious brands.',
+      'footer.company': 'Company', 'footer.contact': 'Contact', 'footer.rights': 'All rights reserved.',
+      'footer.privacy': 'Privacy', 'footer.terms': 'Terms',
+      'wa.label': 'Chat with us on WhatsApp'
+    }
+  };
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (I18N[lang] && I18N[lang][key] !== undefined) el.textContent = I18N[lang][key];
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem('signal-lang', lang);
+  }
+  document.querySelectorAll('.lang-switch button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.lang));
+  });
+  const savedLang = localStorage.getItem('signal-lang') || 'es';
+  setLang(savedLang);
+
+  /* ============ 3. REVEAL ON SCROLL ============ */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ============ 4. YEAR ============ */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ============ 5. THREE.js HERO ============ */
+  (function initHero3D(){
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    const scene  = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    camera.position.set(0, 0, 14);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    const dir = new THREE.DirectionalLight(0xff5a00, 0.8);
+    dir.position.set(5, 5, 5); scene.add(dir);
+
+    const sphere = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(3.4, 2),
+      new THREE.MeshBasicMaterial({ color: 0xff5a00, wireframe: true, transparent: true, opacity: 0.55 })
+    );
+    sphere.position.set(3.5, 0.5, 0);
+    scene.add(sphere);
+
+    const ringsGroup = new THREE.Group();
+    for (let i = 0; i < 5; i++) {
+      const r = 1.5 + i * 1.1;
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(r, 0.015, 8, 128),
+        new THREE.MeshBasicMaterial({ color: 0xff5a00, transparent: true, opacity: 0.25 + i * 0.08 })
+      );
+      ring.rotation.x = Math.PI / 2;
+      ringsGroup.add(ring);
+    }
+    ringsGroup.position.set(-4, -0.5, -1);
+    scene.add(ringsGroup);
+
+    const pGeo = new THREE.BufferGeometry();
+    const count = 450;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      positions[i*3]   = (Math.random() - 0.5) * 30;
+      positions[i*3+1] = (Math.random() - 0.5) * 18;
+      positions[i*3+2] = (Math.random() - 0.5) * 20;
+    }
+    pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const particles = new THREE.Points(pGeo,
+      new THREE.PointsMaterial({ color: 0xffffff, size: 0.035, transparent: true, opacity: 0.6 }));
+    scene.add(particles);
+
+    let scrollY = 0, mx = 0, my = 0;
+    window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+    window.addEventListener('mousemove', (e) => {
+      mx = (e.clientX / window.innerWidth  - 0.5) * 0.6;
+      my = (e.clientY / window.innerHeight - 0.5) * 0.6;
+    });
+
+    const clock = new THREE.Clock();
+    function animate(){
+      const t = clock.getElapsedTime();
+      sphere.rotation.y = t * 0.25; sphere.rotation.x = t * 0.15;
+      ringsGroup.children.forEach((ring, i) => { ring.rotation.z = t * (0.1 + i * 0.04); });
+      ringsGroup.rotation.x = Math.PI / 2 + Math.sin(t * 0.4) * 0.15;
+      particles.rotation.y = t * 0.03;
+      camera.position.z = 14 + scrollY * 0.004;
+      camera.position.x += (mx * 2 - camera.position.x) * 0.04;
+      camera.position.y += (-my * 2 - camera.position.y) * 0.04;
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      camera.aspect = w / h; camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+    });
+  })();
+</script>
+</body>
+</html>
