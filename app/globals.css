@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-display: var(--font-poppins), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --color-signal-orange: #ff5a00;
+  --color-signal-orange-dark: #cc4700;
+  --color-signal-orange-light: #ff8a3d;
+  --color-signal-dark: #0e0e10;
+  --color-signal-graphite: #17171a;
+  --color-signal-steel: #232326;
+  --color-signal-mist: #a0a0a6;
+  --color-signal-mist-dim: #6c6c74;
+  --color-signal-line: #ffffff14;
+  --color-signal-paper: #fafafb;
+
+  --shadow-glow: 0 0 40px rgba(255, 90, 0, 0.35);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.35);
+
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 90, 0, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 22px rgba(255, 90, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 90, 0, 0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-signal-dark);
+  color: var(--color-signal-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ff5a00 0%, #ff8a3d 60%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bento-card {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.012)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.bento-card:hover {
+  border-color: rgba(255, 90, 0, 0.55);
+  box-shadow: 0 20px 60px rgba(255, 90, 0, 0.14);
+}
+
+.cta-pulse {
+  position: relative;
+}
+
+.cta-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  animation: var(--animate-pulse-ring);
+  pointer-events: none;
+}
+
+/* Editorial kicker: mono, tracked-out label with a leading tick — the
+   Swiss-agency numbering/labeling motif used throughout the site. */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-signal-orange);
+}
+
+.kicker::before {
+  content: "";
+  width: 1.25rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}

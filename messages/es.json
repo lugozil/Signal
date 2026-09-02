@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "about": "Nosotros",
+    "work": "Casos de Éxito",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "cta": "Agenda una Auditoría"
+  },
+  "home": {
+    "badge": "Marketing + Tecnología",
+    "titleLine1": "Amplificamos la",
+    "titleAccent": "señal",
+    "titleLine3": "de tu marca.",
+    "subtitle": "Integramos estrategia de marketing, publicidad de alto rendimiento y automatización con IA para que tu mensaje llegue más lejos — con precisión quirúrgica.",
+    "ctaPrimary": "Agenda una Auditoría Gratis",
+    "ctaSecondary": "Ver servicios",
+    "kpi1Value": "+120",
+    "kpi1Label": "Campañas Activas",
+    "kpi2Value": "4.8x",
+    "kpi2Label": "ROAS Promedio",
+    "kpi3Value": "24/7",
+    "kpi3Label": "Automatización",
+    "servicesKicker": "Servicios",
+    "servicesTitle1": "Una sola frecuencia.",
+    "servicesTitle2": "Cinco amplificadores.",
+    "servicesSubtitle": "Un ecosistema integrado de marketing y tecnología, diseñado para transmitir tu mensaje y convertirlo en resultados medibles.",
+    "servicesCtaLink": "Ver todos los servicios",
+    "testimonialsKicker": "Lo que dicen",
+    "testimonialsTitle": "Marcas que confían en nuestra señal.",
+    "finalCtaTitle1": "¿Listo para amplificar tu",
+    "finalCtaAccent": "señal",
+    "finalCtaTitle3": "?",
+    "finalCtaDesc": "Agenda una auditoría gratuita de 30 minutos. Revisamos tu marca, tus canales y salimos con un plan de acción claro.",
+    "finalCtaButton": "Agenda tu Auditoría Gratis"
+  },
+  "services": {
+    "kicker": "Servicios",
+    "title1": "Todo lo que tu marca necesita",
+    "title2": "para transmitir más fuerte.",
+    "subtitle": "Cinco disciplinas, un solo equipo. Cada servicio se conecta con el siguiente para que tu inversión en marketing se convierta en crecimiento real, medible y sostenido.",
+    "ctaKicker": "¿Con cuál empezamos?",
+    "ctaTitle": "Cuéntanos dónde está tu marca hoy.",
+    "ctaDesc": "En 30 minutos te decimos qué está funcionando, qué no, y por dónde amplificar primero.",
+    "ctaButton": "Agenda tu Auditoría Gratis",
+    "items": {
+      "social": {
+        "title": "Gestión de Redes Sociales",
+        "desc": "Estrategia de contenido, producción creativa, copywriting y community management en Instagram, TikTok, LinkedIn y más.",
+        "detail": "No publicamos por publicar. Cada pieza responde a un objetivo de marca: awareness, consideración o conversión. Calendario editorial, producción audiovisual y respuesta a comunidad, todo bajo una misma línea creativa.",
+        "tag1": "Estrategia de contenido",
+        "tag2": "Producción creativa",
+        "tag3": "Community management"
+      },
+      "ads": {
+        "title": "Publicidad de Alto Rendimiento",
+        "desc": "Meta Ads · Google Ads · TikTok Ads. Campañas optimizadas con data y creatividad para maximizar tu ROAS.",
+        "detail": "Estructuramos campañas como sistemas: testeo constante de creativos, segmentación de audiencias y optimización de presupuesto en tiempo real. El objetivo nunca es el alcance — es el retorno.",
+        "tag1": "Meta Ads",
+        "tag2": "Google Ads",
+        "tag3": "TikTok Ads"
+      },
+      "crm": {
+        "title": "CRM & Automatizaciones",
+        "desc": "Implementación de CRM con agentes IA, flujos en HubSpot / Kommo / N8N y gestión inteligente de leads.",
+        "detail": "Tu equipo de ventas no debería perseguir leads en un Excel. Diseñamos flujos automáticos que califican, dan seguimiento y agendan por ti — con integraciones a WhatsApp, email y voz IA.",
+        "tag1": "WhatsApp",
+        "tag2": "Email",
+        "tag3": "Voz IA"
+      },
+      "web": {
+        "title": "Construcción & Desarrollo Web",
+        "desc": "Sitios corporativos, landing pages de conversión, e-commerce y dashboards personalizados con stack moderno.",
+        "detail": "Construimos sitios pensados para vender, no solo para verse bien. Rendimiento técnico, SEO desde el primer día y tracking configurado para que sepas exactamente de dónde viene cada venta.",
+        "tag1": "Core Web Vitals AAA",
+        "tag2": "SEO técnico",
+        "tag3": "Tracking GA4 + GTM"
+      },
+      "support": {
+        "title": "Soporte & Personalización",
+        "desc": "Acompañamiento técnico continuo, customización de plataformas y optimización permanente de tu stack digital.",
+        "detail": "Tu marca crece, tu stack también debería. Damos seguimiento continuo a cada plataforma que implementamos, ajustando y optimizando conforme cambian tus necesidades.",
+        "tag1": "Soporte 24/7",
+        "tag2": "Integraciones a medida",
+        "tag3": "Optimización continua"
+      }
+    }
+  },
+  "testimonials": {
+    "t1": {
+      "quote": "Signal entendió nuestro negocio desde la primera llamada. En tres meses duplicamos los leads calificados sin aumentar el presupuesto de pauta.",
+      "role": "Dueña de restaurante · Puerto Rico",
+      "name": "Carmen R.",
+      "initials": "CR"
+    },
+    "t2": {
+      "quote": "Por fin dejamos de perder leads en WhatsApp. El CRM y las automatizaciones que nos armaron nos devolvieron horas cada semana.",
+      "role": "Director de operaciones · Hospitalidad",
+      "name": "Javier M.",
+      "initials": "JM"
+    },
+    "t3": {
+      "quote": "El sitio nuevo se paga solo. Bajamos el costo de adquisición casi a la mitad en el primer trimestre.",
+      "role": "Fundador · Retail / e-commerce",
+      "name": "Daniel O.",
+      "initials": "DO"
+    }
+  },
+  "about": {
+    "kicker": "Por qué SIGNAL",
+    "title1": "Precisión técnica.",
+    "title2": "Alcance real.",
+    "title3": "Solidez de señal.",
+    "desc": "No vendemos \"arte\". Vendemos sistemas que convierten. Cada pieza creativa y cada campaña se diseña bajo una misma lógica de ingeniería: medible, escalable y reproducible.",
+    "storyKicker": "Nuestra manera de trabajar",
+    "storyTitle": "Construimos como ingenieros, comunicamos como creativos.",
+    "storyBody": "SIGNAL nace para cerrar la brecha entre el marketing que se ve bien y el marketing que factura. Combinamos estrategia, publicidad y tecnología en un mismo equipo para que cada campaña, cada automatización y cada línea de código empuje en la misma dirección: hacer crecer tu negocio.",
+    "linkText": "Conversemos sobre tu marca",
+    "pillars": {
+      "p1": { "title": "Precisión de Grid", "desc": "Auditorías técnicas, benchmarking y arquitectura de campaña pensadas como un sistema, no como piezas sueltas." },
+      "p2": { "title": "Alcance Amplificado", "desc": "Estrategias multicanal con foco en ROAS. Conectamos awareness, performance y nurturing en una misma cadena." },
+      "p3": { "title": "Solidez Operacional", "desc": "CRM, automatizaciones y reportes en vivo. Tu operación comercial vive en un panel claro, no en un Excel perdido." },
+      "p4": { "title": "Innovación Tecnológica", "desc": "Agentes IA, voice bots y analítica predictiva integradas a tu funnel — no como moda, sino como ventaja." }
+    }
+  },
+  "work": {
+    "kicker": "Casos de Éxito",
+    "title": "Marcas que amplificamos.",
+    "subtitle": "Resultados reales de marcas reales, en Puerto Rico y Estados Unidos.",
+    "cases": {
+      "xoco": {
+        "kicker": "Diseño Web · Conversión",
+        "title": "Tendencia web",
+        "desc": "Rediseñamos el website para captar más clientes y transmitir elegancia, elevando la percepción de marca y las ventas."
+      },
+      "haciendaEllago": {
+        "kicker": "Hospitalidad · CRM + Ads",
+        "title": "Reservas 24/7 automatizadas",
+        "desc": "Flujo de WhatsApp + IA para captación y calificación de huéspedes, sin depender de un equipo humano fuera de horario."
+      },
+      "lumotica": {
+        "kicker": "Domótica · Web + Leads",
+        "title": "CAC -47%",
+        "desc": "Funnel de búsqueda en Google Ads + landing optimizada para domótica residencial."
+      }
+    },
+    "ctaKicker": "¿Tu marca es la próxima?",
+    "ctaTitle": "Hablemos de tus resultados.",
+    "ctaButton": "Agenda tu Auditoría Gratis"
+  },
+  "contact": {
+    "kicker": "Contacto",
+    "title1": "¿Listo para amplificar tu",
+    "titleAccent": "señal",
+    "title3": "?",
+    "desc": "Agenda una auditoría gratuita de 30 minutos. Revisamos tu marca, tus canales y salimos con un plan de acción claro — sin letra pequeña.",
+    "ctaButton": "Agenda tu Auditoría Gratis",
+    "emailLabel": "Escríbenos",
+    "phoneLabel": "Llámanos",
+    "chatTitle": "¿Prefieres chatear?",
+    "chatDesc": "Usa el chat en la esquina inferior de la pantalla — te respondemos directamente."
+  },
+  "legal": {
+    "kicker": "Legal",
+    "backHome": "Volver al inicio",
+    "privacyTitle": "Política de Privacidad",
+    "termsTitle": "Términos y Condiciones",
+    "lastUpdated": "Última actualización: Julio 2025 · VIRAL SIGNAL LLC"
+  },
+  "pricing": {
+    "kicker": "Precio Personalizado",
+    "title1": "Más ventas.",
+    "title2": "Un plan hecho para ti.",
+    "title3": "Un precio que tiene sentido.",
+    "subtitle": "Sin paquetes genéricos ni letra pequeña. Auditamos tu marca, diseñamos el plan exacto que necesitas y te damos un precio a la medida de tus objetivos.",
+    "ctaPrimary": "Solicita tu Plan Personalizado",
+    "ctaNote": "Auditoría gratuita de 30 minutos · sin compromiso",
+    "painsKicker": "El problema",
+    "painsTitle": "¿Te suena familiar?",
+    "pain1Title": "Pagas por paquetes que no calzan contigo",
+    "pain1Desc": "Contratas un plan genérico y terminas pagando por servicios que tu negocio ni siquiera necesita.",
+    "pain2Title": "No sabes si tu inversión da resultado",
+    "pain2Desc": "El dinero sale cada mes, pero nadie te muestra con claridad qué está generando ventas y qué no.",
+    "pain3Title": "Cada proveedor va por su lado",
+    "pain3Desc": "Redes, ads, web y CRM en manos de gente distinta que no se habla entre sí — y tú pagas el precio de esa desconexión.",
+    "valueKicker": "La solución",
+    "valueTitle": "Un solo equipo. Un plan a tu medida. Un precio justo.",
+    "valueDesc": "Empezamos con una auditoría gratuita de tu marca. De ahí armamos un plan que combina exactamente los servicios que necesitas — ni uno más — y te damos un precio transparente antes de mover un solo dólar.",
+    "midCtaButton": "Quiero mi plan personalizado",
+    "benefitsKicker": "Por qué funciona",
+    "benefitsTitle": "Diseñado para que cada dólar cuente.",
+    "benefit1Title": "Plan 100% personalizado",
+    "benefit1Desc": "Nada de paquetes prearmados: cada servicio se elige según lo que tu negocio realmente necesita.",
+    "benefit2Title": "Precio transparente",
+    "benefit2Desc": "Sabes exactamente qué pagas y por qué, antes de firmar nada.",
+    "benefit3Title": "Resultados medibles desde el día 1",
+    "benefit3Desc": "Reportes claros que conectan cada campaña con las ventas reales.",
+    "benefit4Title": "Escala cuando tú lo necesites",
+    "benefit4Desc": "Ajustamos el plan conforme crece tu negocio, sin contratos que te amarren.",
+    "testimonialsKicker": "Resultados reales",
+    "testimonialsTitle": "Negocios que ya amplificaron su señal.",
+    "faqKicker": "Preguntas frecuentes",
+    "faqTitle": "Antes de que preguntes.",
+    "faq1Q": "¿Cómo se calcula el precio si no hay paquetes fijos?",
+    "faq1A": "Durante la auditoría gratuita revisamos tu marca, tus canales y tus objetivos. Con eso armamos un plan con los servicios exactos que necesitas y te damos un precio cerrado, sin sorpresas después.",
+    "faq2Q": "¿Tengo que firmar un contrato largo?",
+    "faq2A": "No. Trabajamos con planes flexibles que puedes ajustar o pausar conforme cambian las necesidades de tu negocio.",
+    "faq3Q": "¿Qué pasa si no veo resultados?",
+    "faq3A": "Tienes reportes claros desde el primer mes para que veas exactamente qué está funcionando. Si algo no da resultado, ajustamos la estrategia — no esperamos al final del trimestre para reaccionar.",
+    "faq4Q": "¿Esto funciona para negocios pequeños o solo para marcas grandes?",
+    "faq4A": "Funciona para ambos. El plan se arma según tu presupuesto y tus objetivos, así que un negocio pequeño paga por lo que necesita hoy, no por lo que necesitaría una marca diez veces más grande.",
+    "faq5Q": "¿Cuánto tiempo toma ver resultados?",
+    "faq5A": "Depende del canal: la publicidad paga suele mostrar movimiento en las primeras semanas; el SEO y el contenido orgánico toman más tiempo pero generan resultados más sostenibles. Te lo dejamos claro desde la auditoría.",
+    "finalCtaTitle1": "Tu plan, tu precio,",
+    "finalCtaAccent": "tus resultados.",
+    "finalCtaDesc": "Agenda tu auditoría gratuita de 30 minutos y sal con un plan claro — y un precio que tiene sentido para tu negocio.",
+    "finalCtaButton": "Agenda tu Auditoría Gratis"
+  },
+  "footer": {
+    "tagline": "Agencia integral de Marketing + Tecnología. Amplificamos la señal de marcas ambiciosas.",
+    "companyHeading": "Compañía",
+    "contactHeading": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Términos"
+  }
+}

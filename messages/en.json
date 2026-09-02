@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "work": "Work",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "cta": "Book an Audit"
+  },
+  "home": {
+    "badge": "Marketing + Technology",
+    "titleLine1": "We amplify your",
+    "titleAccent": "signal",
+    "titleLine3": "to the market.",
+    "subtitle": "We blend marketing strategy, high-performance advertising, and AI automation so your message reaches further — with surgical precision.",
+    "ctaPrimary": "Book a Free Audit",
+    "ctaSecondary": "Explore services",
+    "kpi1Value": "+120",
+    "kpi1Label": "Active Campaigns",
+    "kpi2Value": "4.8x",
+    "kpi2Label": "Average ROAS",
+    "kpi3Value": "24/7",
+    "kpi3Label": "Automation",
+    "servicesKicker": "Services",
+    "servicesTitle1": "One single frequency.",
+    "servicesTitle2": "Five amplifiers.",
+    "servicesSubtitle": "An integrated marketing + tech ecosystem, built to broadcast your message and turn it into measurable results.",
+    "servicesCtaLink": "See all services",
+    "testimonialsKicker": "What clients say",
+    "testimonialsTitle": "Brands that trust our signal.",
+    "finalCtaTitle1": "Ready to amplify your",
+    "finalCtaAccent": "signal",
+    "finalCtaTitle3": "?",
+    "finalCtaDesc": "Book a free 30-minute audit. We review your brand, your channels, and walk out with a clear action plan.",
+    "finalCtaButton": "Book Your Free Audit"
+  },
+  "services": {
+    "kicker": "Services",
+    "title1": "Everything your brand needs",
+    "title2": "to broadcast louder.",
+    "subtitle": "Five disciplines, one team. Every service connects to the next so your marketing investment turns into real, measurable, sustained growth.",
+    "ctaKicker": "Where do we start?",
+    "ctaTitle": "Tell us where your brand stands today.",
+    "ctaDesc": "In 30 minutes we'll tell you what's working, what isn't, and where to amplify first.",
+    "ctaButton": "Book Your Free Audit",
+    "items": {
+      "social": {
+        "title": "Social Media Management",
+        "desc": "Content strategy, creative production, copywriting, and community management on Instagram, TikTok, LinkedIn, and more.",
+        "detail": "We don't post for the sake of posting. Every piece serves a brand goal: awareness, consideration, or conversion. Editorial calendar, creative production, and community response — all under one creative line.",
+        "tag1": "Content strategy",
+        "tag2": "Creative production",
+        "tag3": "Community management"
+      },
+      "ads": {
+        "title": "High-Performance Advertising",
+        "desc": "Meta Ads · Google Ads · TikTok Ads. Data-driven, creative campaigns engineered to maximize your ROAS.",
+        "detail": "We structure campaigns as systems: constant creative testing, audience segmentation, and real-time budget optimization. The goal is never reach — it's return.",
+        "tag1": "Meta Ads",
+        "tag2": "Google Ads",
+        "tag3": "TikTok Ads"
+      },
+      "crm": {
+        "title": "CRM & Automations",
+        "desc": "CRM setup with AI agents, workflows in HubSpot / Kommo / N8N, and smart lead management.",
+        "detail": "Your sales team shouldn't be chasing leads in a spreadsheet. We design automated flows that qualify, follow up, and book meetings for you — with WhatsApp, email, and AI voice integrations.",
+        "tag1": "WhatsApp",
+        "tag2": "Email",
+        "tag3": "AI Voice"
+      },
+      "web": {
+        "title": "Web Design & Development",
+        "desc": "Corporate sites, conversion landing pages, e-commerce, and custom dashboards built on a modern stack.",
+        "detail": "We build sites meant to sell, not just to look good. Technical performance, SEO from day one, and tracking set up so you know exactly where every sale comes from.",
+        "tag1": "AAA Core Web Vitals",
+        "tag2": "Technical SEO",
+        "tag3": "GA4 + GTM tracking"
+      },
+      "support": {
+        "title": "Support & Customization",
+        "desc": "Ongoing technical support, platform customization, and continuous optimization of your digital stack.",
+        "detail": "Your brand grows, your stack should too. We keep tuning and optimizing every platform we implement as your needs evolve.",
+        "tag1": "24/7 Support",
+        "tag2": "Custom integrations",
+        "tag3": "Continuous optimization"
+      }
+    }
+  },
+  "testimonials": {
+    "t1": {
+      "quote": "Signal understood our business from the first call. We doubled qualified leads in three months without raising ad spend.",
+      "role": "Restaurant owner · Puerto Rico",
+      "name": "Carmen R.",
+      "initials": "CR"
+    },
+    "t2": {
+      "quote": "We finally stopped losing leads in WhatsApp. The CRM and automations they built gave us hours back every week.",
+      "role": "Director of Operations · Hospitality",
+      "name": "Javier M.",
+      "initials": "JM"
+    },
+    "t3": {
+      "quote": "The new site pays for itself. We cut acquisition cost almost in half in the first quarter.",
+      "role": "Founder · Retail / e-commerce",
+      "name": "Daniel O.",
+      "initials": "DO"
+    }
+  },
+  "about": {
+    "kicker": "Why SIGNAL",
+    "title1": "Technical precision.",
+    "title2": "Real reach.",
+    "title3": "Signal-strong.",
+    "desc": "We don't sell \"art\". We sell systems that convert. Every creative piece and every campaign is designed under the same engineering logic: measurable, scalable, and reproducible.",
+    "storyKicker": "How we work",
+    "storyTitle": "We build like engineers, communicate like creatives.",
+    "storyBody": "SIGNAL exists to close the gap between marketing that looks good and marketing that sells. We bring strategy, advertising, and technology into one team so every campaign, every automation, and every line of code pushes in the same direction: growing your business.",
+    "linkText": "Let's talk about your brand",
+    "pillars": {
+      "p1": { "title": "Grid Precision", "desc": "Technical audits, benchmarking, and campaign architecture designed as a system — not loose pieces." },
+      "p2": { "title": "Amplified Reach", "desc": "Multichannel strategies focused on ROAS. We connect awareness, performance, and nurturing in one chain." },
+      "p3": { "title": "Operational Solidity", "desc": "CRM, automations, and live reports. Your sales operation lives in a clear dashboard — not a forgotten spreadsheet." },
+      "p4": { "title": "Tech Innovation", "desc": "AI agents, voice bots, and predictive analytics plugged into your funnel — as an advantage, not a trend." }
+    }
+  },
+  "work": {
+    "kicker": "Case Studies",
+    "title": "Brands we amplified.",
+    "subtitle": "Real results for real brands, across Puerto Rico and the United States.",
+    "cases": {
+      "xoco": {
+        "kicker": "Web Design · Conversion",
+        "title": "Web Trend",
+        "desc": "We redesigned the website to attract more clients and convey elegance, lifting brand perception and sales."
+      },
+      "haciendaEllago": {
+        "kicker": "Hospitality · CRM + Ads",
+        "title": "24/7 automated bookings",
+        "desc": "A WhatsApp + AI flow to capture and qualify guests around the clock, with no human team needed after hours."
+      },
+      "lumotica": {
+        "kicker": "Home Automation · Web + Leads",
+        "title": "CAC -47%",
+        "desc": "Google Ads search funnel + an optimized landing page for residential home automation."
+      }
+    },
+    "ctaKicker": "Is your brand next?",
+    "ctaTitle": "Let's talk about your results.",
+    "ctaButton": "Book Your Free Audit"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title1": "Ready to amplify your",
+    "titleAccent": "signal",
+    "title3": "?",
+    "desc": "Book a free 30-minute audit. We review your brand, your channels, and walk out with a clear action plan — no fine print.",
+    "ctaButton": "Book Your Free Audit",
+    "emailLabel": "Email us",
+    "phoneLabel": "Call us",
+    "chatTitle": "Prefer to chat?",
+    "chatDesc": "Use the chat in the bottom corner of the screen — we'll respond directly."
+  },
+  "legal": {
+    "kicker": "Legal",
+    "backHome": "Back to home",
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms & Conditions",
+    "lastUpdated": "Last updated: July 2025 · VIRAL SIGNAL LLC"
+  },
+  "pricing": {
+    "kicker": "Custom Pricing",
+    "title1": "More sales.",
+    "title2": "A plan built for you.",
+    "title3": "A price that makes sense.",
+    "subtitle": "No generic packages, no fine print. We audit your brand, design the exact plan you need, and give you a price sized to your goals.",
+    "ctaPrimary": "Request Your Custom Plan",
+    "ctaNote": "Free 30-minute audit · no commitment",
+    "painsKicker": "The problem",
+    "painsTitle": "Sound familiar?",
+    "pain1Title": "You pay for packages that don't fit",
+    "pain1Desc": "You sign up for a generic plan and end up paying for services your business doesn't even need.",
+    "pain2Title": "You don't know if it's working",
+    "pain2Desc": "Money goes out every month, but no one shows you clearly what's driving sales and what isn't.",
+    "pain3Title": "Every vendor does their own thing",
+    "pain3Desc": "Social, ads, web, and CRM sit with different people who don't talk to each other — and you pay the price of that disconnect.",
+    "valueKicker": "The solution",
+    "valueTitle": "One team. One plan built for you. One fair price.",
+    "valueDesc": "We start with a free audit of your brand. From there we build a plan that combines exactly the services you need — not one more — and give you a transparent price before a single dollar moves.",
+    "midCtaButton": "I want my custom plan",
+    "benefitsKicker": "Why it works",
+    "benefitsTitle": "Built so every dollar counts.",
+    "benefit1Title": "100% custom plan",
+    "benefit1Desc": "No prebuilt packages — every service is chosen based on what your business actually needs.",
+    "benefit2Title": "Transparent pricing",
+    "benefit2Desc": "You know exactly what you're paying and why, before you sign anything.",
+    "benefit3Title": "Measurable results from day 1",
+    "benefit3Desc": "Clear reporting that connects every campaign to real sales.",
+    "benefit4Title": "Scales when you need it to",
+    "benefit4Desc": "We adjust the plan as your business grows — no contracts that lock you in.",
+    "testimonialsKicker": "Real results",
+    "testimonialsTitle": "Businesses that already amplified their signal.",
+    "faqKicker": "Frequently asked questions",
+    "faqTitle": "Before you ask.",
+    "faq1Q": "How is the price calculated without fixed packages?",
+    "faq1A": "During the free audit we review your brand, your channels, and your goals. From that we build a plan with the exact services you need and give you a fixed price — no surprises later.",
+    "faq2Q": "Do I have to sign a long contract?",
+    "faq2A": "No. We work with flexible plans you can adjust or pause as your business needs change.",
+    "faq3Q": "What happens if I don't see results?",
+    "faq3A": "You get clear reporting from month one so you can see exactly what's working. If something isn't delivering, we adjust the strategy — we don't wait until the end of the quarter to react.",
+    "faq4Q": "Does this work for small businesses or only big brands?",
+    "faq4A": "Both. The plan is built around your budget and goals, so a small business pays for what it needs today — not what a brand ten times its size would need.",
+    "faq5Q": "How long until I see results?",
+    "faq5A": "It depends on the channel: paid advertising usually shows movement within the first few weeks; SEO and organic content take longer but deliver more sustainable results. We lay this out clearly during the audit.",
+    "finalCtaTitle1": "Your plan, your price,",
+    "finalCtaAccent": "your results.",
+    "finalCtaDesc": "Book your free 30-minute audit and walk out with a clear plan — and a price that makes sense for your business.",
+    "finalCtaButton": "Book Your Free Audit"
+  },
+  "footer": {
+    "tagline": "End-to-end Marketing + Tech agency. We amplify the signal of ambitious brands.",
+    "companyHeading": "Company",
+    "contactHeading": "Contact",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
