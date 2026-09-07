@@ -42,6 +42,7 @@ html {
 body {
   background: var(--color-signal-dark);
   color: var(--color-signal-paper);
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -125,4 +126,32 @@ body {
   height: 1px;
   background: currentColor;
   opacity: 0.6;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 36s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tile-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.tile-float {
+  animation: tile-float 3.6s ease-in-out infinite;
 }

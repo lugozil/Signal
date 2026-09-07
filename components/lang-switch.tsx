@@ -22,7 +22,7 @@ export function LangSwitch() {
           type="button"
           onClick={() => router.replace(pathname, { locale: l })}
           aria-current={locale === l}
-          className={`relative cursor-pointer rounded-full px-2.5 py-1.5 text-[11px] font-medium tracking-wide transition-colors duration-200 ${
+          className={`relative flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full px-3.5 text-xs font-medium tracking-wide transition-colors duration-200 ${
             locale === l
               ? "text-signal-dark"
               : "text-signal-mist hover:text-signal-paper"

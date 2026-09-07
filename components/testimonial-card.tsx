@@ -29,7 +29,7 @@ export function TestimonialCard({
           </div>
           <div>
             <p className="text-sm font-semibold">{name}</p>
-            <p className="font-mono text-[11px] uppercase tracking-wide text-signal-mist-dim">
+            <p className="font-mono text-xs uppercase tracking-wide text-signal-mist-dim">
               {role}
             </p>
           </div>

@@ -128,6 +128,7 @@ export default async function PricingPage({
             {benefits.map(({ key, icon }) => (
               <ServiceCard
                 key={key}
+                compact
                 icon={icon}
                 title={t(`${key}Title`)}
                 desc={t(`${key}Desc`)}

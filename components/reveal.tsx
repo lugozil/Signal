@@ -8,12 +8,14 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 };
 
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.1 },
-  },
-};
+function containerVariants(stagger: number): Variants {
+  return {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: stagger },
+    },
+  };
+}
 
 const hoverLift = {
   whileHover: { y: -6, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] as const } },
@@ -46,9 +48,12 @@ export function Reveal({
 export function RevealGroup({
   children,
   className,
+  stagger = 0.1,
 }: {
   children: ReactNode;
   className?: string;
+  /** Seconds between each child's entrance. */
+  stagger?: number;
 }) {
   return (
     <motion.div
@@ -56,7 +61,7 @@ export function RevealGroup({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-40px" }}
-      variants={container}
+      variants={containerVariants(stagger)}
     >
       {children}
     </motion.div>

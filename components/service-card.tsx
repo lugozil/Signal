@@ -8,7 +8,9 @@ export function ServiceCard({
   desc,
   detail,
   tags,
+  compact = false,
   className = "",
+  children,
 }: {
   icon: ReactNode;
   index?: string;
@@ -16,7 +18,11 @@ export function ServiceCard({
   desc: string;
   detail?: string;
   tags?: string[];
+  /** Smaller, single-line title — for dense grids (e.g. pricing benefits). */
+  compact?: boolean;
   className?: string;
+  /** Extra content rendered between the description and the tags. */
+  children?: ReactNode;
 }) {
   return (
     <RevealItem
@@ -33,7 +39,13 @@ export function ServiceCard({
           </span>
         )}
       </div>
-      <h3 className="mt-4 text-xl font-bold tracking-tight lg:text-2xl">
+      <h3
+        className={
+          compact
+            ? "mt-4 truncate text-base font-bold tracking-tight"
+            : "mt-4 text-xl font-bold tracking-tight lg:text-2xl"
+        }
+      >
         {title}
       </h3>
       <p className="mt-2 text-sm text-signal-mist lg:text-base">{desc}</p>
@@ -42,8 +54,9 @@ export function ServiceCard({
           {detail}
         </p>
       )}
+      {children}
       {tags && (
-        <div className="mt-5 flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide">
+        <div className="mt-5 flex flex-wrap gap-2 font-mono text-xs uppercase tracking-wide">
           {tags.map((tag) => (
             <span
               key={tag}

@@ -1,6 +1,16 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LogoMark } from "./logo-mark";
+import { InstagramIcon } from "./icons";
+
+// Add Facebook, WhatsApp, and TikTok here once those links are available.
+const SOCIAL_LINKS = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/signalagency.pr/",
+    icon: InstagramIcon,
+  },
+] as const;
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -18,6 +28,20 @@ export function Footer() {
           <p className="mt-3 max-w-xs leading-relaxed text-signal-mist">
             {t("tagline")}
           </p>
+          <div className="mt-5 flex gap-3">
+            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-signal-mist transition-colors duration-200 hover:border-signal-orange hover:text-signal-orange"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
         </div>
 
         <div>

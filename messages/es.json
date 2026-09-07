@@ -9,21 +9,15 @@
   },
   "home": {
     "badge": "Marketing + Tecnología",
-    "titleLine1": "Amplificamos la",
-    "titleAccent": "señal",
-    "titleLine3": "de tu marca.",
-    "subtitle": "Integramos estrategia de marketing, publicidad de alto rendimiento y automatización con IA para que tu mensaje llegue más lejos — con precisión quirúrgica.",
+    "titleLine1": "Más ventas.",
+    "titleLine2": "Menos esfuerzo.",
+    "titleAccent": "Cero estrés.",
+    "subtitle": "Leads de calidad, mayor eficiencia y reportes claros.",
     "ctaPrimary": "Agenda una Auditoría Gratis",
     "ctaSecondary": "Ver servicios",
-    "kpi1Value": "+120",
-    "kpi1Label": "Campañas Activas",
-    "kpi2Value": "4.8x",
-    "kpi2Label": "ROAS Promedio",
-    "kpi3Value": "24/7",
-    "kpi3Label": "Automatización",
     "servicesKicker": "Servicios",
     "servicesTitle1": "Una sola frecuencia.",
-    "servicesTitle2": "Cinco amplificadores.",
+    "servicesTitle2": "Seis amplificadores.",
     "servicesSubtitle": "Un ecosistema integrado de marketing y tecnología, diseñado para transmitir tu mensaje y convertirlo en resultados medibles.",
     "servicesCtaLink": "Ver todos los servicios",
     "testimonialsKicker": "Lo que dicen",
@@ -62,11 +56,11 @@
       },
       "crm": {
         "title": "CRM & Automatizaciones",
-        "desc": "Implementación de CRM con agentes IA, flujos en HubSpot / Kommo / N8N y gestión inteligente de leads.",
-        "detail": "Tu equipo de ventas no debería perseguir leads en un Excel. Diseñamos flujos automáticos que califican, dan seguimiento y agendan por ti — con integraciones a WhatsApp, email y voz IA.",
-        "tag1": "WhatsApp",
-        "tag2": "Email",
-        "tag3": "Voz IA"
+        "desc": "Implementación de CRM con agentes IA, flujos de automatización en HubSpot, Kommo, HighLevel, N8N y Zapier, y gestión inteligente de leads potenciada por Meta IA.",
+        "detail": "Tu equipo de ventas no debería perseguir leads en un Excel. Diseñamos flujos automáticos en HighLevel, Zapier y N8N que califican, dan seguimiento y agendan por ti — con integraciones a WhatsApp, email, voz IA y Meta IA para respuestas inteligentes.",
+        "tag1": "HighLevel",
+        "tag2": "Zapier",
+        "tag3": "Meta IA"
       },
       "web": {
         "title": "Construcción & Desarrollo Web",
@@ -83,6 +77,14 @@
         "tag1": "Soporte 24/7",
         "tag2": "Integraciones a medida",
         "tag3": "Optimización continua"
+      },
+      "filming": {
+        "title": "Filmación & Producción Audiovisual",
+        "desc": "Grabación y edición de video profesional para reels, anuncios y campañas — contenido hecho para convertir en cada pauta.",
+        "detail": "Desde el guion hasta la edición final: producimos el material audiovisual que alimenta tus campañas pagadas y tu contenido orgánico, siempre con un ojo puesto en el resultado.",
+        "tag1": "Producción de video",
+        "tag2": "Edición profesional",
+        "tag3": "Contenido para pautas"
       }
     }
   },
@@ -121,7 +123,10 @@
       "p2": { "title": "Alcance Amplificado", "desc": "Estrategias multicanal con foco en ROAS. Conectamos awareness, performance y nurturing en una misma cadena." },
       "p3": { "title": "Solidez Operacional", "desc": "CRM, automatizaciones y reportes en vivo. Tu operación comercial vive en un panel claro, no en un Excel perdido." },
       "p4": { "title": "Innovación Tecnológica", "desc": "Agentes IA, voice bots y analítica predictiva integradas a tu funnel — no como moda, sino como ventaja." }
-    }
+    },
+    "teamKicker": "Nuestro equipo",
+    "teamTitle": "Las personas detrás de cada campaña.",
+    "teamRolePlaceholder": "Equipo SIGNAL"
   },
   "work": {
     "kicker": "Casos de Éxito",
@@ -130,18 +135,21 @@
     "cases": {
       "xoco": {
         "kicker": "Diseño Web · Conversión",
-        "title": "Tendencia web",
-        "desc": "Rediseñamos el website para captar más clientes y transmitir elegancia, elevando la percepción de marca y las ventas."
+        "company": "Xoco",
+        "title": "De invisible a irresistible.",
+        "desc": "Le desarrollamos el sitio web, mejorando su presencia en línea — y sumamos nuestro servicio de marketing, que ahora también le genera reservaciones directas gracias al posicionamiento digital. Esto no lo decimos nosotros: escúchalo directamente de ella."
       },
       "haciendaEllago": {
         "kicker": "Hospitalidad · CRM + Ads",
-        "title": "Reservas 24/7 automatizadas",
-        "desc": "Flujo de WhatsApp + IA para captación y calificación de huéspedes, sin depender de un equipo humano fuera de horario."
+        "company": "Hacienda El Lago",
+        "title": "Mayores reservaciones.",
+        "desc": "Nuestro equipo de marketing se encarga de la gestión de redes sociales junto a publicidad en Meta, y los resultados hablan solos: más reservaciones y mayor visibilidad de marca."
       },
       "lumotica": {
         "kicker": "Domótica · Web + Leads",
-        "title": "CAC -47%",
-        "desc": "Funnel de búsqueda en Google Ads + landing optimizada para domótica residencial."
+        "company": "Lumotica Innovations",
+        "title": "Menos gasto, más clientes: CAC -47%.",
+        "desc": "Le implementamos un ecosistema completo de CRM y agentes de IA, con seguimiento constante para que cada lead avance hasta convertirse en cliente."
       }
     },
     "ctaKicker": "¿Tu marca es la próxima?",
@@ -168,11 +176,11 @@
     "lastUpdated": "Última actualización: Julio 2025 · VIRAL SIGNAL LLC"
   },
   "pricing": {
-    "kicker": "Precio Personalizado",
+    "kicker": "Ecosistema Integral",
     "title1": "Más ventas.",
     "title2": "Un plan hecho para ti.",
     "title3": "Un precio que tiene sentido.",
-    "subtitle": "Sin paquetes genéricos ni letra pequeña. Auditamos tu marca, diseñamos el plan exacto que necesitas y te damos un precio a la medida de tus objetivos.",
+    "subtitle": "Sin paquetes genéricos ni letra pequeña. Diseñamos el plan exacto que necesitas y nos adaptamos a la medida de tus objetivos.",
     "ctaPrimary": "Solicita tu Plan Personalizado",
     "ctaNote": "Auditoría gratuita de 30 minutos · sin compromiso",
     "painsKicker": "El problema",
@@ -184,8 +192,8 @@
     "pain3Title": "Cada proveedor va por su lado",
     "pain3Desc": "Redes, ads, web y CRM en manos de gente distinta que no se habla entre sí — y tú pagas el precio de esa desconexión.",
     "valueKicker": "La solución",
-    "valueTitle": "Un solo equipo. Un plan a tu medida. Un precio justo.",
-    "valueDesc": "Empezamos con una auditoría gratuita de tu marca. De ahí armamos un plan que combina exactamente los servicios que necesitas — ni uno más — y te damos un precio transparente antes de mover un solo dólar.",
+    "valueTitle": "Un equipo completo de expertos a tu disposición.",
+    "valueDesc": "Empezamos con una auditoría gratuita de tu marca. De ahí armamos un plan que combina exactamente los servicios que necesitas — ni uno más — y trabajamos con total transparencia antes de mover un solo dólar.",
     "midCtaButton": "Quiero mi plan personalizado",
     "benefitsKicker": "Por qué funciona",
     "benefitsTitle": "Diseñado para que cada dólar cuente.",
@@ -193,9 +201,9 @@
     "benefit1Desc": "Nada de paquetes prearmados: cada servicio se elige según lo que tu negocio realmente necesita.",
     "benefit2Title": "Precio transparente",
     "benefit2Desc": "Sabes exactamente qué pagas y por qué, antes de firmar nada.",
-    "benefit3Title": "Resultados medibles desde el día 1",
-    "benefit3Desc": "Reportes claros que conectan cada campaña con las ventas reales.",
-    "benefit4Title": "Escala cuando tú lo necesites",
+    "benefit3Title": "Resultados medibles",
+    "benefit3Desc": "Reportes claros desde el día 1 que conectan cada campaña con las ventas reales.",
+    "benefit4Title": "Escala sin límites",
     "benefit4Desc": "Ajustamos el plan conforme crece tu negocio, sin contratos que te amarren.",
     "testimonialsKicker": "Resultados reales",
     "testimonialsTitle": "Negocios que ya amplificaron su señal.",

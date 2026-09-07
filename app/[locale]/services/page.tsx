@@ -5,7 +5,8 @@ import { Reveal, RevealGroup } from "@/components/reveal";
 import { Section } from "@/components/section";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
-import { AdsIcon, CrmIcon, SocialIcon, SupportIcon, WebIcon } from "@/components/icons";
+import { SocialFeedMockup } from "@/components/social-feed-mockup";
+import { AdsIcon, CrmIcon, FilmIcon, SocialIcon, SupportIcon, WebIcon } from "@/components/icons";
 
 export async function generateMetadata({
   params,
@@ -31,8 +32,9 @@ export default async function ServicesPage({
   const services = [
     { key: "social", icon: <SocialIcon />, span: "lg:col-span-7 lg:row-span-2" },
     { key: "ads", icon: <AdsIcon />, span: "lg:col-span-5" },
-    { key: "crm", icon: <CrmIcon />, span: "lg:col-span-5" },
-    { key: "web", icon: <WebIcon />, span: "lg:col-span-7" },
+    { key: "filming", icon: <FilmIcon />, span: "lg:col-span-5" },
+    { key: "crm", icon: <CrmIcon />, span: "lg:col-span-6" },
+    { key: "web", icon: <WebIcon />, span: "lg:col-span-6" },
     { key: "support", icon: <SupportIcon />, span: "md:col-span-2 lg:col-span-12" },
   ] as const;
 
@@ -66,7 +68,9 @@ export default async function ServicesPage({
               desc={s(`${key}.desc`)}
               detail={s(`${key}.detail`)}
               tags={[s(`${key}.tag1`), s(`${key}.tag2`), s(`${key}.tag3`)]}
-            />
+            >
+              {key === "social" && <SocialFeedMockup />}
+            </ServiceCard>
           ))}
         </RevealGroup>
       </Section>

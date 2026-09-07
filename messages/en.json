@@ -9,21 +9,15 @@
   },
   "home": {
     "badge": "Marketing + Technology",
-    "titleLine1": "We amplify your",
-    "titleAccent": "signal",
-    "titleLine3": "to the market.",
-    "subtitle": "We blend marketing strategy, high-performance advertising, and AI automation so your message reaches further — with surgical precision.",
+    "titleLine1": "More sales.",
+    "titleLine2": "Less effort.",
+    "titleAccent": "Zero stress.",
+    "subtitle": "Quality leads, greater efficiency, and clear reports.",
     "ctaPrimary": "Book a Free Audit",
     "ctaSecondary": "Explore services",
-    "kpi1Value": "+120",
-    "kpi1Label": "Active Campaigns",
-    "kpi2Value": "4.8x",
-    "kpi2Label": "Average ROAS",
-    "kpi3Value": "24/7",
-    "kpi3Label": "Automation",
     "servicesKicker": "Services",
     "servicesTitle1": "One single frequency.",
-    "servicesTitle2": "Five amplifiers.",
+    "servicesTitle2": "Six amplifiers.",
     "servicesSubtitle": "An integrated marketing + tech ecosystem, built to broadcast your message and turn it into measurable results.",
     "servicesCtaLink": "See all services",
     "testimonialsKicker": "What clients say",
@@ -62,11 +56,11 @@
       },
       "crm": {
         "title": "CRM & Automations",
-        "desc": "CRM setup with AI agents, workflows in HubSpot / Kommo / N8N, and smart lead management.",
-        "detail": "Your sales team shouldn't be chasing leads in a spreadsheet. We design automated flows that qualify, follow up, and book meetings for you — with WhatsApp, email, and AI voice integrations.",
-        "tag1": "WhatsApp",
-        "tag2": "Email",
-        "tag3": "AI Voice"
+        "desc": "CRM setup with AI agents, automation workflows in HubSpot, Kommo, HighLevel, N8N, and Zapier, and smart lead management powered by Meta AI.",
+        "detail": "Your sales team shouldn't be chasing leads in a spreadsheet. We design automated flows in HighLevel, Zapier, and N8N that qualify, follow up, and book meetings for you — with WhatsApp, email, AI voice, and Meta AI for smart replies.",
+        "tag1": "HighLevel",
+        "tag2": "Zapier",
+        "tag3": "Meta AI"
       },
       "web": {
         "title": "Web Design & Development",
@@ -83,6 +77,14 @@
         "tag1": "24/7 Support",
         "tag2": "Custom integrations",
         "tag3": "Continuous optimization"
+      },
+      "filming": {
+        "title": "Filming & Video Production",
+        "desc": "Professional video shooting and editing for reels, ads, and campaigns — content built to convert in every placement.",
+        "detail": "From script to final cut: we produce the video content that fuels your paid campaigns and organic content, always with an eye on results.",
+        "tag1": "Video production",
+        "tag2": "Professional editing",
+        "tag3": "Ad-ready content"
       }
     }
   },
@@ -121,7 +123,10 @@
       "p2": { "title": "Amplified Reach", "desc": "Multichannel strategies focused on ROAS. We connect awareness, performance, and nurturing in one chain." },
       "p3": { "title": "Operational Solidity", "desc": "CRM, automations, and live reports. Your sales operation lives in a clear dashboard — not a forgotten spreadsheet." },
       "p4": { "title": "Tech Innovation", "desc": "AI agents, voice bots, and predictive analytics plugged into your funnel — as an advantage, not a trend." }
-    }
+    },
+    "teamKicker": "Our team",
+    "teamTitle": "The people behind every campaign.",
+    "teamRolePlaceholder": "SIGNAL Team"
   },
   "work": {
     "kicker": "Case Studies",
@@ -130,18 +135,21 @@
     "cases": {
       "xoco": {
         "kicker": "Web Design · Conversion",
-        "title": "Web Trend",
-        "desc": "We redesigned the website to attract more clients and convey elegance, lifting brand perception and sales."
+        "company": "Xoco",
+        "title": "From invisible to irresistible.",
+        "desc": "We built her a new website, improving her online presence — and added our marketing service, which now also drives direct bookings through digital positioning. Don't take our word for it: hear it straight from her."
       },
       "haciendaEllago": {
         "kicker": "Hospitality · CRM + Ads",
-        "title": "24/7 automated bookings",
-        "desc": "A WhatsApp + AI flow to capture and qualify guests around the clock, with no human team needed after hours."
+        "company": "Hacienda El Lago",
+        "title": "More bookings.",
+        "desc": "Our marketing team runs their social media alongside Meta advertising, and the results speak for themselves: more bookings and greater brand visibility."
       },
       "lumotica": {
         "kicker": "Home Automation · Web + Leads",
-        "title": "CAC -47%",
-        "desc": "Google Ads search funnel + an optimized landing page for residential home automation."
+        "company": "Lumotica Innovations",
+        "title": "Less spend, more customers: -47% CAC.",
+        "desc": "We implemented a full CRM ecosystem with AI agents and ongoing follow-up so every lead moves forward until it becomes a customer."
       }
     },
     "ctaKicker": "Is your brand next?",
@@ -168,11 +176,11 @@
     "lastUpdated": "Last updated: July 2025 · VIRAL SIGNAL LLC"
   },
   "pricing": {
-    "kicker": "Custom Pricing",
+    "kicker": "Full Ecosystem",
     "title1": "More sales.",
     "title2": "A plan built for you.",
     "title3": "A price that makes sense.",
-    "subtitle": "No generic packages, no fine print. We audit your brand, design the exact plan you need, and give you a price sized to your goals.",
+    "subtitle": "No generic packages, no fine print. We design the exact plan you need and adapt it to your goals.",
     "ctaPrimary": "Request Your Custom Plan",
     "ctaNote": "Free 30-minute audit · no commitment",
     "painsKicker": "The problem",
@@ -184,8 +192,8 @@
     "pain3Title": "Every vendor does their own thing",
     "pain3Desc": "Social, ads, web, and CRM sit with different people who don't talk to each other — and you pay the price of that disconnect.",
     "valueKicker": "The solution",
-    "valueTitle": "One team. One plan built for you. One fair price.",
-    "valueDesc": "We start with a free audit of your brand. From there we build a plan that combines exactly the services you need — not one more — and give you a transparent price before a single dollar moves.",
+    "valueTitle": "A full team of experts at your service.",
+    "valueDesc": "We start with a free audit of your brand. From there we build a plan that combines exactly the services you need — not one more — and work with total transparency before a single dollar moves.",
     "midCtaButton": "I want my custom plan",
     "benefitsKicker": "Why it works",
     "benefitsTitle": "Built so every dollar counts.",
@@ -193,9 +201,9 @@
     "benefit1Desc": "No prebuilt packages — every service is chosen based on what your business actually needs.",
     "benefit2Title": "Transparent pricing",
     "benefit2Desc": "You know exactly what you're paying and why, before you sign anything.",
-    "benefit3Title": "Measurable results from day 1",
-    "benefit3Desc": "Clear reporting that connects every campaign to real sales.",
-    "benefit4Title": "Scales when you need it to",
+    "benefit3Title": "Measurable results",
+    "benefit3Desc": "Clear reporting from day 1 that connects every campaign to real sales.",
+    "benefit4Title": "Scales without limits",
     "benefit4Desc": "We adjust the plan as your business grows — no contracts that lock you in.",
     "testimonialsKicker": "Real results",
     "testimonialsTitle": "Businesses that already amplified their signal.",

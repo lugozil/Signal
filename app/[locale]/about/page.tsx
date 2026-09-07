@@ -5,6 +5,8 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { Section } from "@/components/section";
 import { SectionHeading } from "@/components/section-heading";
 import { ArrowIcon } from "@/components/icons";
+import { TeamCarousel } from "@/components/team-carousel";
+import { SignalPulse } from "@/components/signal-pulse";
 
 export async function generateMetadata({
   params,
@@ -31,8 +33,8 @@ export default async function AboutPage({
   return (
     <>
       <Section first bg>
-        <div className="mx-auto max-w-7xl">
-          <Reveal className="max-w-3xl">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center">
+          <Reveal className="lg:col-span-7">
             <p className="kicker">{t("kicker")}</p>
             <h1 className="mt-4 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight lg:text-6xl">
               {t("title1")}
@@ -41,7 +43,7 @@ export default async function AboutPage({
               <br />
               <span className="text-gradient">{t("title3")}</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-signal-mist lg:text-xl">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-signal-mist lg:text-xl">
               {t("desc")}
             </p>
             <div className="mt-8">
@@ -49,6 +51,9 @@ export default async function AboutPage({
                 {t("linkText")} <ArrowIcon />
               </CtaButton>
             </div>
+          </Reveal>
+          <Reveal delay={0.15} className="hidden justify-self-center lg:col-span-5 lg:flex">
+            <SignalPulse />
           </Reveal>
         </div>
       </Section>
@@ -88,6 +93,16 @@ export default async function AboutPage({
             ))}
           </RevealGroup>
         </div>
+      </Section>
+
+      <Section divider>
+        <Reveal className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="kicker justify-center">{t("teamKicker")}</p>
+          <h2 className="mt-4 text-balance text-3xl font-extrabold leading-tight tracking-tight lg:text-4xl">
+            {t("teamTitle")}
+          </h2>
+        </Reveal>
+        <TeamCarousel roleFallback={t("teamRolePlaceholder")} />
       </Section>
     </>
   );

@@ -10,8 +10,8 @@ type Variant = "primary" | "secondary";
 type Size = "md" | "sm";
 
 const sizes: Record<Size, string> = {
-  md: "px-7 py-4 text-base",
-  sm: "px-4 py-2 text-sm",
+  md: "min-h-11 px-7 py-4 text-base",
+  sm: "min-h-11 px-4 py-2 text-sm",
 };
 
 export function CtaButton({
