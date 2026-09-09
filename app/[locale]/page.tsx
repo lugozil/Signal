@@ -56,7 +56,7 @@ export default async function HomePage({
             </RevealItem>
 
             <RevealItem>
-              <h1 className="mx-auto mt-6 max-w-3xl text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="mx-auto mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                 {t("titleLine1")} {t("titleLine2")}{" "}
                 <span className="text-gradient">{t("titleAccent")}</span>
               </h1>

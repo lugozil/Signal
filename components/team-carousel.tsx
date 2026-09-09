@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Team roster for the About page marquee. Photos are optional — add one via
-// `photoSrc` (e.g. "/team/oscar-flores.jpg" in /public/team/) and it renders
+// `photoSrc` (e.g. "/team/miguel-lugo.jpg" in /public/team/) and it renders
 // in place of the initials avatar, always in grayscale per the brand's B&W
 // team-photo treatment. Roles are placeholders until the real titles are
 // provided — swap `role` per person.
@@ -12,8 +12,6 @@ export type TeamMember = {
 };
 
 export const TEAM: TeamMember[] = [
-  { name: "Oscar Flores" },
-  { name: "Jeanette Cardona" },
   { name: "Yajeli Melean" },
   { name: "Carmen" },
   { name: "Barbara Perez" },
