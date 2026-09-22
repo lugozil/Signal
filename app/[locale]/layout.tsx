@@ -8,7 +8,7 @@ import { MotionConfig } from "motion/react";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { LeadConnectorWidget } from "@/components/lead-connector-widget";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -73,7 +73,7 @@ export default async function LocaleLayout({
             <Footer />
           </MotionConfig>
         </NextIntlClientProvider>
-        <LeadConnectorWidget />
+        <WhatsAppButton />
       </body>
     </html>
   );

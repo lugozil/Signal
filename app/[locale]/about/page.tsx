@@ -5,7 +5,6 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { Section } from "@/components/section";
 import { SectionHeading } from "@/components/section-heading";
 import { ArrowIcon } from "@/components/icons";
-import { TeamCarousel } from "@/components/team-carousel";
 import { SignalPulse } from "@/components/signal-pulse";
 
 export async function generateMetadata({
@@ -93,16 +92,6 @@ export default async function AboutPage({
             ))}
           </RevealGroup>
         </div>
-      </Section>
-
-      <Section divider>
-        <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="kicker justify-center">{t("teamKicker")}</p>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold leading-tight tracking-tight lg:text-4xl">
-            {t("teamTitle")}
-          </h2>
-        </Reveal>
-        <TeamCarousel roleFallback={t("teamRolePlaceholder")} />
       </Section>
     </>
   );
