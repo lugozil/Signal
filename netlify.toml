@@ -1,4 +1,6 @@
+# The Next.js app lives in 1-Website/ (paths below are relative to it).
 [build]
+  base = "1-Website"
   command = "npm run build"
   publish = ".next"
 
