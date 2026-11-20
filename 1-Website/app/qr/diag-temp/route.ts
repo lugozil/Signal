@@ -24,10 +24,15 @@ export async function GET() {
   const orig = g.fetch._nextOriginalFetch;
   const results = [];
   results.push({ contextFrom: g.netlifyBlobsContext ? "global" : process.env.NETLIFY_BLOBS_CONTEXT ? "env" : "none", keys, hasOriginalFetch: !!orig, node: process.version });
-  results.push(await withTimeout("eventual+origFetch get", () => getStore({ name: "qr-codes", fetch: orig ?? fetch }).get("zzzzzz")));
-  results.push(await withTimeout("eventual+globalFetch get", () => getStore({ name: "qr-codes" }).get("zzzzzz")));
-  results.push(await withTimeout("strong+origFetch get", () => getStore({ name: "qr-codes", consistency: "strong", fetch: orig ?? fetch }).get("zzzzzz")));
-  results.push(await withTimeout("eventual+origFetch list", () => getStore({ name: "qr-codes", fetch: orig ?? fetch }).list().then((r) => r.blobs.length)));
-  results.push(await withTimeout("region us-east-2 get", () => getStore({ name: "qr-codes", fetch: orig ?? fetch, region: "us-east-2" }).get("zzzzzz")));
+  const st = getStore({ name: "qr-codes", fetch: orig ?? fetch });
+  results.push(await withTimeout("getMetadata missing", () => st.getMetadata("zzzzzz")));
+  results.push(await withTimeout("getWithMetadata missing", () => st.getWithMetadata("zzzzzz")));
+  results.push(await withTimeout("get missing json", () => st.get("zzzzzz", { type: "json" })));
+  results.push(await withTimeout("list prefix missing", () => st.list({ prefix: "zzzzzz" }).then((r) => r.blobs.map((b) => b.key))));
+  results.push(await withTimeout("setJSON __diag", () => st.setJSON("__diag", { ok: 1 })));
+  results.push(await withTimeout("get __diag", () => st.get("__diag", { type: "json" })));
+  results.push(await withTimeout("strong get __diag", () => getStore({ name: "qr-codes", consistency: "strong", fetch: orig ?? fetch }).get("__diag", { type: "json" })));
+  results.push(await withTimeout("delete __diag", () => st.delete("__diag")));
+  results.push(await withTimeout("list after", () => st.list().then((r) => r.blobs.map((b) => b.key))));
   return Response.json(results, { headers: { "Cache-Control": "no-store" } });
 }
