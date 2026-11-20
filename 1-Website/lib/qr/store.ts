@@ -24,35 +24,12 @@ interface Backend {
   put(record: QrRecord): Promise<void>;
 }
 
-/**
- * Strong consistency needs an "uncached edge URL" that not every Netlify
- * runtime provides. If a strong read fails for that reason, fall back to the
- * default (eventual) reads; writes are unaffected.
- */
-function withFallback(primary: Backend, fallback: Backend): Backend {
-  const isConsistencyError = (e: unknown) =>
-    e instanceof Error && /consistency/i.test(`${e.name} ${e.message}`);
-  const retry =
-    <A extends unknown[], R>(fn: (b: Backend) => (...a: A) => Promise<R>) =>
-    async (...args: A) => {
-      try {
-        return await fn(primary)(...args);
-      } catch (e) {
-        if (!isConsistencyError(e)) throw e;
-        return fn(fallback)(...args);
-      }
-    };
-  return {
-    get: retry((b) => b.get),
-    list: retry((b) => b.list),
-    insert: retry((b) => b.insert),
-    put: retry((b) => b.put),
-  };
-}
-
 function blobsBackend(store: Store): Backend {
   return {
     async get(code) {
+      // On Netlify's runtime a plain get() of a missing key never resolves
+      // (verified in production), while getMetadata() returns null at once.
+      if (!(await store.getMetadata(code))) return null;
       return ((await store.get(code, { type: "json" })) as QrRecord | null) ?? null;
     },
     async list() {
@@ -116,10 +93,7 @@ function rawFetch(): typeof fetch {
 function backend(): Backend {
   if (process.env.QR_LOCAL_STORE === "1") return localBackend;
   try {
-    const fetchImpl = rawFetch();
-    const strong = getStore({ name: STORE_NAME, consistency: "strong", fetch: fetchImpl });
-    const eventual = getStore({ name: STORE_NAME, fetch: fetchImpl });
-    return withFallback(blobsBackend(strong), blobsBackend(eventual));
+    return blobsBackend(getStore({ name: STORE_NAME, consistency: "strong", fetch: rawFetch() }));
   } catch (error) {
     // Outside Netlify (local dev) there is no Blobs context.
     if (process.env.NODE_ENV !== "production") return localBackend;
