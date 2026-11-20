@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortes Industrial | One Source. Zero Downtime.</title>
+<meta name="description" content="Cortés Industrial, an IPS company: electrical and mechanical reconstruction, field services and equipment sales in Puerto Rico. 50 years minimizing our customers' downtime.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Cortes Industrial | One Source. Zero Downtime.">
+<meta property="og:description" content="50 years keeping Puerto Rico's industry moving. Repair, reconstruction, field services and equipment sales.">
+<meta property="og:image" content="https://viralsignal.net/clientes/Cortes/assets/og.jpg">
+<link rel="icon" type="image/png" href="/clientes/Cortes/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@700;800&family=Saira+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e10600; --red-deep:#a80000; --red-hi:#ff2a1f;
+  --ink:#0b0d10; --ink-2:#121519; --ink-3:#1a1e23;
+  --line:rgba(255,255,255,.14);
+  --text:#e9ebee; --muted:#b9bec5;
+  --silver:linear-gradient(180deg,#fafafa 0%,#e4e6e9 38%,#b9bdc3 52%,#eceef0 70%,#c9cdd2 100%);
+  --display:"Saira Semi Condensed","Arial Narrow",sans-serif;
+  --tight:"Inter Tight","Inter",Arial,sans-serif;
+  --body:"Inter",Arial,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:50;background:var(--silver);box-shadow:0 2px 18px rgba(0,0,0,.45);overflow:hidden}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;position:relative}
+.top .logo{width:clamp(170px,22vw,250px);position:relative;z-index:2}
+.top::after{content:"";position:absolute;right:-40px;top:0;bottom:0;width:min(34vw,420px);background:linear-gradient(135deg,var(--red-hi),var(--red-deep));clip-path:polygon(28% 0,100% 0,100% 100%,0 100%)}
+.top-cta{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;font-size:16px;padding:10px 4px}
+.top-cta svg{width:34px;height:34px;flex:none}
+@media (max-width:560px){.top-cta span{display:none}.top::after{width:110px}}
+
+/* ---------- shared bits ---------- */
+.hexbg{background:
+  radial-gradient(60% 40% at 12% 18%,rgba(225,6,0,.16),transparent 70%),
+  radial-gradient(40% 30% at 80% 85%,rgba(225,6,0,.10),transparent 70%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 1 54 16v30L28 61 2 46V16zM28 61v36M2 16 0 15M54 16l2-1' fill='none' stroke='%23ffffff' stroke-opacity='.055' stroke-width='1.2'/%3E%3C/svg%3E"),
+  linear-gradient(180deg,#0e1013,#08090b)}
+.metal{background:linear-gradient(180deg,#ffffff 0%,#f1f2f4 40%,#a9aeb5 50%,#e9ebee 62%,#cfd3d8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.redtxt{background:linear-gradient(180deg,#ff3a2e 0%,#e10600 55%,#9e0000 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-family:var(--display);font-weight:800;text-transform:uppercase;color:var(--red);letter-spacing:.02em}
+
+/* ---------- AD 1 : hero ---------- */
+.ad1{position:relative;padding:0 0 56px}
+.ad1-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:0 28px;align-items:start}
+.ad1-left{padding-top:56px;position:relative;z-index:2}
+.h1{font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:-.005em}
+.h1 .l1{display:block;font-size:clamp(44px,6.4vw,84px)}
+.h1 .l2{display:block;font-size:clamp(78px,11.6vw,150px);line-height:.86;filter:drop-shadow(0 4px 18px rgba(225,6,0,.35))}
+.h1 .l3{display:block;font-size:clamp(56px,8.2vw,108px)}
+.moving{margin-top:18px;font-size:clamp(24px,3vw,36px);line-height:1.05;padding-bottom:16px;border-bottom:2px solid;border-image:linear-gradient(90deg,var(--red),rgba(225,6,0,0)) 1}
+.intro{margin-top:18px;font-size:clamp(16px,1.5vw,19px);color:#e6e8eb;max-width:34ch}
+.intro .mission{display:block;color:var(--red-hi);margin-top:2px}
+
+.svc1{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:30px;max-width:560px}
+.svc1 li{list-style:none;text-align:center;padding:0 8px;position:relative}
+.svc1 li+li::before{content:"";position:absolute;left:0;top:12%;bottom:0;width:1px;background:var(--line)}
+.svc1 .box{aspect-ratio:1.12;border:2px solid var(--red);border-radius:8px;display:grid;place-items:center;background:rgba(0,0,0,.55);box-shadow:inset 0 0 18px rgba(225,6,0,.18);margin-bottom:10px;transition:transform .25s,box-shadow .25s}
+.svc1 li:hover .box{transform:translateY(-3px);box-shadow:inset 0 0 22px rgba(225,6,0,.35),0 8px 24px rgba(225,6,0,.25)}
+.svc1 .box img{width:74%;height:74%;object-fit:contain}
+.svc1 span{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(11px,1.05vw,13.5px);line-height:1.2;letter-spacing:.02em;display:block}
+
+.ad1-right{position:relative}
+.welder{position:relative;margin-right:calc((100vw - min(var(--wrap),100vw - 32px))/-2);clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);min-height:100%}
+.welder img{width:100%;height:auto;aspect-ratio:894/660;object-fit:cover;object-position:60% 35%}
+.welder::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,9,11,.55),transparent 40%),linear-gradient(0deg,rgba(8,9,11,.55),transparent 30%)}
+.badge{position:absolute;z-index:4;width:clamp(180px,18vw,250px);left:-13%;top:clamp(40px,5vw,76px);filter:drop-shadow(0 10px 30px rgba(0,0,0,.6))}
+.stack{display:flex;flex-direction:column;gap:12px;margin-top:14px;margin-right:calc((100vw - min(var(--wrap),100vw - 32px))/-2)}
+.shot{position:relative;background:linear-gradient(135deg,#f4f5f6,#9097a0 45%,#e8eaec 70%,#7d838b);padding:3px 0 3px 3px;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%)}
+.shot img{width:100%;height:clamp(96px,9vw,124px);object-fit:cover;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%)}
+.shot:nth-child(1){margin-left:30%}.shot:nth-child(2){margin-left:20%}.shot:nth-child(3){margin-left:10%}.shot:nth-child(4){margin-left:0}
+.shot:nth-child(4) img{height:clamp(110px,11vw,150px);object-position:40% 55%}
+
+.facility1{margin-top:34px}
+.facility1 h3{font-size:clamp(18px,1.8vw,22px)}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 34px;margin-top:10px;list-style:none}
+.checks li{position:relative;padding-left:24px;font-size:clamp(14.5px,1.25vw,16px);color:#e6e8eb}
+.checks li::before{content:"";position:absolute;left:0;top:.3em;width:14px;height:9px;border-left:3px solid var(--red);border-bottom:3px solid var(--red);transform:rotate(-48deg)}
+
+.cta1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:28px;margin-top:44px}
+.cta1-red{background:linear-gradient(135deg,var(--red-hi),var(--red) 45%,var(--red-deep));clip-path:polygon(0 0,100% 0,90% 100%,0 100%);padding:22px 70px 22px 0;position:relative}
+.cta1-red::before{content:"";position:absolute;right:100%;top:0;bottom:0;width:50vw;background:inherit}
+.cta1-red .big{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(28px,3.4vw,44px);line-height:.98;color:#fff}
+.cta1-red .small{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(18px,2vw,26px);color:#3a0000;margin-top:6px}
+.contacts{display:grid;gap:14px}
+.contacts a{display:flex;align-items:center;gap:14px;font-size:clamp(17px,1.7vw,21px);color:#fff;width:fit-content;transition:color .2s}
+.contacts a:hover{color:var(--red-hi)}
+.ic{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff3b30,#c40000);display:grid;place-items:center;flex:none;box-shadow:0 4px 14px rgba(225,6,0,.35)}
+.ic svg{width:20px;height:20px;fill:#fff}
+
+.brands1{margin-top:44px}
+.rule-title{display:flex;align-items:center;gap:16px;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:clamp(14px,1.4vw,17px);color:#fff;white-space:nowrap}
+.rule-title::before,.rule-title::after{content:"";height:2px;flex:1;background:linear-gradient(90deg,transparent,var(--red))}
+.rule-title::after{background:linear-gradient(90deg,var(--red),transparent)}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px 34px;margin-top:22px}
+.logos img{height:clamp(28px,3.6vw,50px);width:auto;opacity:.92;transition:opacity .2s}
+.logos img:hover{opacity:1}
+
+.band{background:var(--silver);color:#1f2328;text-align:center;font-family:var(--display);font-weight:700;letter-spacing:.32em;text-transform:uppercase;font-size:clamp(11px,1.35vw,16px);padding:16px 12px;border-top:2px solid #fff;border-bottom:2px solid #8b9097}
+
+/* ---------- AD 2 ---------- */
+.ad2{position:relative;background:linear-gradient(180deg,#0a0c0f,#0d1014 60%,#090a0c);overflow:hidden}
+.ad2-photo{position:absolute;right:0;top:0;width:50%;height:min(980px,100%);}
+.ad2-photo img{width:100%;height:100%;object-fit:cover;object-position:30% 30%}
+.ad2-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0d10 0%,rgba(11,13,16,.75) 22%,rgba(11,13,16,0) 55%),linear-gradient(0deg,#0b0d10 0%,rgba(11,13,16,0) 30%)}
+.shard{position:absolute;background:linear-gradient(160deg,var(--red-hi),var(--red-deep));z-index:1}
+.shard.a{right:6%;top:0;width:min(17vw,210px);height:min(15vw,190px);clip-path:polygon(0 0,100% 0,55% 100%,22% 100%)}
+.shard.b{right:0;top:clamp(520px,52vw,640px);width:min(5vw,60px);height:min(17vw,200px);clip-path:polygon(100% 0,100% 100%,0 55%)}
+.ad2 .wrap{position:relative;z-index:2;padding:72px 0 0}
+.ad2-copy{max-width:600px}
+.h2{font-family:var(--tight);font-weight:800;letter-spacing:-.02em;line-height:1.02;font-size:clamp(36px,4.6vw,60px)}
+.h2 .sm{display:block;font-weight:700;font-size:.78em;color:#fff}
+.h2 .lg{display:block;font-size:1.18em;color:#fff}
+.h2 .lg em{font-style:normal;color:var(--red)}
+.redrule{height:4px;width:min(470px,100%);margin:16px 0 22px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 55%,rgba(225,6,0,0))}
+.lead2{font-family:var(--tight);font-weight:700;font-size:clamp(19px,2vw,24px);color:#fff}
+.p2{margin-top:8px;font-size:clamp(16px,1.5vw,18.5px);color:#d9dce0;max-width:44ch}
+.p2 strong{color:var(--red);font-weight:600}
+
+.svc2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:38px;max-width:640px;list-style:none}
+.svc2 li{text-align:center;padding:0 10px;position:relative}
+.svc2 li+li::before{content:"";position:absolute;left:0;top:8%;bottom:4%;width:1px;background:rgba(255,255,255,.22)}
+.disc{width:min(100%,104px);aspect-ratio:1;margin:0 auto 14px;border-radius:50%;background:radial-gradient(circle at 38% 30%,#ff2b20,#d60000 55%,#9b0000);display:grid;place-items:center;box-shadow:0 8px 26px rgba(225,6,0,.35),inset 0 -6px 14px rgba(0,0,0,.25);transition:transform .25s}
+.svc2 li:hover .disc{transform:scale(1.06)}
+.disc img{width:62%;height:62%;object-fit:contain}
+.svc2 span{font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(11px,1.1vw,14px);line-height:1.3;display:block}
+
+.cols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-top:56px;padding-bottom:40px}
+.cols2>div{padding-right:34px}
+.cols2>div+div{padding:0 0 0 34px;border-left:1px solid rgba(255,255,255,.22)}
+.slash-title{font-family:var(--tight);font-weight:800;text-transform:uppercase;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.005em;display:flex;align-items:center;gap:14px;color:#fff}
+.slash-title::before{content:"";width:10px;height:28px;background:var(--red);transform:skewX(-20deg)}
+.slashes{list-style:none;margin-top:14px;display:grid;gap:9px}
+.slashes li{position:relative;padding-left:26px;font-size:clamp(15.5px,1.45vw,18px);color:#e2e4e7}
+.slashes li::before{content:"";position:absolute;left:4px;top:.28em;width:5px;height:15px;background:var(--red);transform:skewX(-20deg)}
+.fac{list-style:none;margin-top:14px;display:grid;gap:12px}
+.fac li{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;font-size:clamp(15.5px,1.45vw,18px);color:#e2e4e7}
+.fac img{width:34px;height:34px;object-fit:contain;justify-self:center}
+
+.brands2{position:relative;background:#f4f5f6;color:#15181c}
+.brands2 .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:22px;padding:22px 0;min-height:118px}
+.brands2 .lbl{font-family:var(--tight);font-weight:800;text-transform:uppercase;font-size:clamp(13px,1.2vw,15px);line-height:1.35;padding-right:22px;border-right:2px solid var(--red)}
+.brands2 .list{font-size:clamp(14px,1.3vw,16px);line-height:1.7;color:#22262b}
+.brands2 .list i{font-style:normal;color:var(--red);font-weight:600;padding:0 2px}
+.over50{align-self:stretch;margin:-46px 0 -18px;background:linear-gradient(150deg,#ff2418,#d00000 50%,#8e0000);clip-path:polygon(9% 6%,100% 0,100% 100%,0 100%);color:#fff;text-align:center;font-family:var(--display);text-transform:uppercase;padding:34px 30px 22px 46px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.over50 .o{font-weight:700;letter-spacing:.08em;font-size:clamp(14px,1.4vw,18px)}
+.over50 .y{font-weight:800;font-size:clamp(36px,4vw,52px);line-height:.95}
+.over50 .x{font-weight:700;letter-spacing:.06em;font-size:clamp(13px,1.3vw,17px);border-bottom:2px solid #fff;padding-bottom:6px}
+
+.cta2{background:linear-gradient(180deg,#0d1014,#08090b);padding:48px 0 52px}
+.cta2 .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:34px;align-items:center}
+.cta2 h2{font-family:var(--tight);font-weight:800;letter-spacing:-.02em;font-size:clamp(28px,3.4vw,44px);line-height:1.08}
+.cta2 p{margin-top:8px;font-size:clamp(16px,1.5vw,19px);color:#d9dce0;max-width:52ch}
+.cta2 .redrule{margin:18px 0 0;width:min(380px,80%)}
+.cta2 .contacts{padding-left:34px;border-left:1px solid rgba(255,255,255,.22)}
+
+footer{background:#060708;color:#8a9097;font-size:13px;text-align:center;padding:18px 16px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .ad1-grid{grid-template-columns:1fr}
+  .ad1-right{order:-1;margin-inline:-16px}
+  .welder,.stack{margin-right:0}
+  .welder{clip-path:none}
+  .welder img{aspect-ratio:4/3.2}
+  .badge{left:auto;right:14px;top:auto;bottom:-40px;width:150px}
+  .ad1-left{padding-top:30px}
+  .stack{display:none}
+  .gallery{display:grid!important}
+  .cta1{grid-template-columns:1fr}
+  .cta1-red{margin-right:16px}
+  .ad2-photo{position:relative;width:100%;height:340px}
+  .ad2-photo::after{background:linear-gradient(0deg,#0b0d10 0%,rgba(11,13,16,0) 45%)}
+  .shard.a{width:120px;height:110px}
+  .shard.b{display:none}
+  .ad2 .wrap{padding-top:8px}
+  .cols2{grid-template-columns:1fr;gap:34px}
+  .cols2>div,.cols2>div+div{padding:0;border:0}
+  .brands2 .wrap{grid-template-columns:minmax(0,1fr);gap:12px;padding:26px 0 0}
+  .brands2 .lbl{border-right:0;border-bottom:2px solid var(--red);padding:0 0 8px;width:fit-content}
+  .over50{margin:6px -16px 0;clip-path:polygon(0 12%,100% 0,100% 100%,0 100%);padding:30px 16px 20px}
+  .cta2 .wrap{grid-template-columns:1fr}
+  .cta2 .contacts{padding-left:0;border-left:0}
+}
+.gallery{display:none;grid-template-columns:1fr 1fr;gap:8px;margin-top:30px}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid #c9cdd2}
+@media (max-width:560px){
+  .svc1,.svc2{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}
+  .svc1 li:nth-child(3)::before,.svc2 li:nth-child(3)::before{display:none}
+  .checks{grid-template-columns:1fr}
+  .rule-title{white-space:normal;text-align:center;font-size:13px}
+  .logos{gap:16px 22px}
+  .logos img{height:30px}
+  .band{letter-spacing:.16em}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" aria-label="Cortes Industrial, an IPS company"><img class="logo" src="/clientes/Cortes/assets/logo.png" alt="Cortes Industrial, an IPS company" width="1344" height="433"></a>
+    <a class="top-cta" href="tel:+17879057575">
+      <span>787-905-7575</span>
+      <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#fff"/><path fill="#e10600" d="M22.6 19.9l-2.3-1c-.5-.2-1-.1-1.3.3l-1 1.2c-1.6-.8-2.9-2.1-3.7-3.7l1.2-1c.4-.3.5-.9.3-1.3l-1-2.3c-.2-.5-.8-.8-1.3-.7l-2.1.5c-.5.1-.9.6-.9 1.1 0 5.6 4.5 10.1 10.1 10.1.5 0 1-.4 1.1-.9l.5-2.1c.2-.5-.1-1.1-.6-1.3z"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- =================== AD 1 =================== -->
+<section class="ad1 hexbg">
+  <div class="wrap ad1-grid">
+    <div class="ad1-left">
+      <h1 class="h1 rv">
+        <span class="l1 metal">One Source.</span>
+        <span class="l2 redtxt">Zero</span>
+        <span class="l3 metal">Downtime.</span>
+      </h1>
+      <p class="kicker moving rv">We keep industry moving.</p>
+      <p class="intro rv">Cortés Industrial is your one source partner for all your industrial requirements. From expert repair and field services to equipment sales, our mission is simple:
+        <span class="mission">Minimize Our Customers Downtime.</span></p>
+
+      <ul class="svc1 rv">
+        <li><div class="box"><img src="/clientes/Cortes/assets/ico-electrical.png" alt=""></div><span>Electrical Reconstruction</span></li>
+        <li><div class="box"><img src="/clientes/Cortes/assets/ico-mechanical.png" alt=""></div><span>Mechanical Reconstruction</span></li>
+        <li><div class="box"><img src="/clientes/Cortes/assets/ico-field.png" alt=""></div><span>Field Services</span></li>
+        <li><div class="box"><img src="/clientes/Cortes/assets/ico-sales.png" alt=""></div><span>Equipment Sales</span></li>
+      </ul>
+
+      <div class="gallery">
+        <img src="/clientes/Cortes/assets/factory.webp" alt="Cortes Industrial repair shop floor" loading="lazy">
+        <img src="/clientes/Cortes/assets/crane.webp" alt="Field service crew lifting a motor with a crane" loading="lazy">
+        <img src="/clientes/Cortes/assets/painter.webp" alt="Technician coating a motor stator" loading="lazy">
+        <img src="/clientes/Cortes/assets/pump.webp" alt="Reconditioned blue pump and motor" loading="lazy">
+      </div>
+
+      <div class="facility1 rv">
+        <h3 class="kicker">State-of-the-art facility</h3>
+        <ul class="checks">
+          <li>50,000 Sq. Ft. Facility</li>
+          <li>Vertical Lathe 46”</li>
+          <li>Test Panel 230/460/2300/4160 Volts</li>
+          <li>Vertical Boring Mill</li>
+          <li>Vacuum Pressure Impregnation 8’x8’</li>
+          <li>Radial Drill</li>
+          <li>Lathes up to 62” Swing</li>
+          <li>20 Ton Overhead Crane</li>
+          <li>Lathes up to 25’ Between Centers</li>
+          <li>15,000 lbs Balancing Machine</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ad1-right">
+      <div class="welder"><img src="/clientes/Cortes/assets/welder.webp" alt="Cortes Industrial technician grinding a motor housing" width="894" height="918" fetchpriority="high"></div>
+      <img class="badge" src="/clientes/Cortes/assets/badge-50.png" alt="50th Anniversary, est. 1976" width="708" height="621">
+      <div class="stack" aria-hidden="true">
+        <div class="shot rv"><img src="/clientes/Cortes/assets/factory.webp" alt="" loading="lazy"></div>
+        <div class="shot rv"><img src="/clientes/Cortes/assets/crane.webp" alt="" loading="lazy"></div>
+        <div class="shot rv"><img src="/clientes/Cortes/assets/painter.webp" alt="" loading="lazy"></div>
+        <div class="shot rv"><img src="/clientes/Cortes/assets/pump.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap cta1 rv" id="contact">
+    <div class="cta1-red">
+      <p class="big">Let’s solve<br>your challenge.</p>
+      <p class="small">Get in touch today.</p>
+    </div>
+    <div class="contacts">
+      <a href="tel:+17879057575"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg></span>787-905-7575</a>
+      <a href="mailto:service@cortesindustrial.com"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>service@cortesindustrial.com</a>
+    </div>
+  </div>
+
+  <div class="wrap brands1 rv">
+    <p class="rule-title">We repair &amp; sell major brands</p>
+    <div class="logos">
+      <img src="/clientes/Cortes/assets/brand-1.png" alt="TECO Westinghouse" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-2.png" alt="Baldor" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-3.png" alt="Siemens" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-4.png" alt="WEG" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-5.png" alt="US Motors" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-6.png" alt="Leeson" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-7.png" alt="Danfoss Drives" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-8.png" alt="KSB" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-9.png" alt="Grundfos" loading="lazy">
+      <img src="/clientes/Cortes/assets/brand-10.png" alt="Cascade Pump" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<p class="band">One source. Expert solutions. Minimizing downtime.</p>
+
+<!-- =================== AD 2 =================== -->
+<section class="ad2">
+  <div class="ad2-photo"><img src="/clientes/Cortes/assets/motor.webp" alt="Industrial motor and pump at a Puerto Rico plant" loading="lazy" width="789" height="1500"></div>
+  <span class="shard a" aria-hidden="true"></span>
+  <span class="shard b" aria-hidden="true"></span>
+
+  <div class="wrap">
+    <div class="ad2-copy">
+      <h2 class="h2 rv"><span class="sm">Powering Puerto Rico’s</span><span class="lg">Industry <em>Forward</em></span></h2>
+      <div class="redrule"></div>
+      <p class="lead2 rv">Reliable solutions to minimize your downtime.</p>
+      <p class="p2 rv">For over <strong>50 years,</strong> Cortes Industrial has been the trusted partner of Puerto Rico’s industrial sector, delivering expert repair, reconstruction and field services with the highest standards of quality and safety.</p>
+
+      <ul class="svc2 rv">
+        <li><div class="disc"><img src="/clientes/Cortes/assets/ico2-electrical.png" alt=""></div><span>Electrical Reconstruction</span></li>
+        <li><div class="disc"><img src="/clientes/Cortes/assets/ico2-mechanical.png" alt=""></div><span>Mechanical Reconstruction</span></li>
+        <li><div class="disc"><img src="/clientes/Cortes/assets/ico2-field.png" alt=""></div><span>Field Services</span></li>
+        <li><div class="disc"><img src="/clientes/Cortes/assets/ico2-sales.png" alt=""></div><span>Equipment Sales</span></li>
+      </ul>
+    </div>
+
+    <div class="cols2">
+      <div class="rv">
+        <h3 class="slash-title">Our services</h3>
+        <ul class="slashes">
+          <li>Motor &amp; Pump Repair and Reconditioning</li>
+          <li>Custom Machine Work</li>
+          <li>Welding &amp; Machining</li>
+          <li>Rotating Machinery Alignment &amp; Balancing</li>
+          <li>Removal, Installation &amp; Start-up</li>
+          <li>Preventive Maintenance Programs</li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h3 class="slash-title">Our facility</h3>
+        <ul class="fac">
+          <li><img src="/clientes/Cortes/assets/fac-building.png" alt="">50,000 sq. ft. facility</li>
+          <li><img src="/clientes/Cortes/assets/fac-bolt.png" alt="">Test panel 230/460/2300/4160 volts</li>
+          <li><img src="/clientes/Cortes/assets/fac-tank.png" alt="">Vacuum pressure impregnation<br>8’ x 8’ resin tank</li>
+          <li><img src="/clientes/Cortes/assets/fac-gear.png" alt="">Full-service machine shop</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands2">
+  <div class="wrap">
+    <p class="lbl">Repair &amp; sales of major<br>brands such as:</p>
+    <p class="list">Teco-Westinghouse <i>/</i> Baldor <i>/</i> Siemens <i>/</i> WEG <i>/</i> US&nbsp;Motors <i>/</i> Leeson <i>/</i> Danfoss&nbsp;Drives <i>/</i> KSB <i>/</i> Grundfos <i>/</i> Cascade&nbsp;Pump <i>/</i> Peerless <i>/</i> Zoeller <i>/</i> Ebara&nbsp;and&nbsp;more.</p>
+    <div class="over50"><span class="o">Over</span><span class="y">50 Years</span><span class="x">of experience</span></div>
+  </div>
+</section>
+
+<section class="cta2">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Let’s keep your operation moving.</h2>
+      <p>Contact our team today and discover why industry trusts Cortes Industrial as their one source solution.</p>
+      <div class="redrule"></div>
+    </div>
+    <div class="contacts rv">
+      <a href="tel:+17879057575"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg></span>787-905-7575</a>
+      <a href="mailto:service@cortesindustrial.com"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>service@cortesindustrial.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© <span id="yr">2026</span> Cortes Industrial · An IPS Company · Puerto Rico</footer>
+
+<script>
+document.documentElement.classList.add('js');
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
